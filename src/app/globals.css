@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cafe-bg: #FBF7F2;
+    --cafe-cream: #F5EBE1;
+    --cafe-beige: #EEDBCA;
+    --cafe-tan: #D9BEA7;
+    --cafe-caramel: #C27A45;
+    --cafe-amber: #D89255;
+    --cafe-brown: #543323;
+    --cafe-espresso: #2C1810;
+    --cafe-dark: #1A0D08;
+    --cafe-border: #E8D6C4;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--cafe-bg);
+    color: var(--cafe-espresso);
+  }
+
+  body {
+    background-color: var(--cafe-bg);
+    color: var(--cafe-espresso);
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F5EBE1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C27A45;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #543323;
+  }
+}
+
+/* Floating animation for coffee beans and coffee splash */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes steamRise {
+  0% {
+    opacity: 0.2;
+    transform: translateY(0) scaleX(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(-14px) scaleX(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scaleX(1.3);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4.5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatGentle 5.5s ease-in-out 1.5s infinite;
+}
+
+.animate-steam {
+  animation: steamRise 3s ease-out infinite;
+}
