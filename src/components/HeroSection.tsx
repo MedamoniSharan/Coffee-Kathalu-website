@@ -11,7 +11,7 @@ export default function HeroSection() {
   const featuredOffer = SPECIAL_OFFERS[0]; // Filter Kaapi
 
   return (
-    <section id="home" className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+    <section id="home" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       {/* Background Subtle Coffee Bean Stamp Pattern */}
       <div 
         className="absolute inset-0 opacity-[0.035] pointer-events-none select-none bg-repeat"
@@ -24,6 +24,19 @@ export default function HeroSection() {
       <div className="absolute top-1/4 right-5 md:right-1/4 w-[380px] h-[380px] md:w-[520px] md:h-[520px] bg-gradient-to-tr from-[#E6CAAF]/60 to-[#FCEFD8]/30 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Official Banner Showcase Card */}
+        <div className="mb-10 rounded-2xl overflow-hidden bg-black p-2 sm:p-3 border border-[#3E2317] shadow-xl max-w-4xl mx-auto">
+          <div className="relative w-full aspect-[1024/163]">
+            <Image
+              src={CAFE_INFO.logoBanner}
+              alt="Coffee Kathalu Official Logo Banner"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Headline and Call-to-actions */}
           <div className="lg:col-span-7 flex flex-col items-start">
@@ -40,23 +53,25 @@ export default function HeroSection() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[62px] font-black tracking-tight text-[#2C1810] leading-[1.08] mb-5">
-              A Coffee Ritual <br className="hidden sm:inline" />
-              for Every Mood & Story
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[62px] font-black tracking-tight text-[#2C1810] leading-[1.08] mb-3">
+              Every Cup Has A Story...
             </h1>
+            <p className="font-serif text-2xl sm:text-3xl font-bold text-[#A76B43] mb-4">
+              ప్రతి కప్పుది ఓ కథే...
+            </p>
 
             {/* Subtext */}
             <p className="text-base sm:text-lg text-[#5D463B] max-w-xl leading-relaxed mb-6 font-normal">
-              Welcome to <strong>Coffee Kathalu</strong> — Warangal’s favorite cozy neighborhood cafe.
-              From morning authentic filter kaapi & dum chai to evening thick milkshakes, fresh juices, and sizzling burgers, every bite has a story.
+              Welcome to <strong>Coffee Kathalu Cafe</strong> — Warangal&apos;s warm neighborhood gathering spot.
+              From morning authentic filter kaapi &amp; dum chai to evening thick milkshakes, fresh juices, crispy snacks, fast food, and handi biryani.
             </p>
 
-            {/* Services Quick Chips */}
+            {/* Services Quick Chips Matching Logo Strip */}
             <div className="flex flex-wrap gap-2 mb-8">
-              {['Tea', 'Coffee', 'Fast Food', 'Milkshakes', 'Juices'].map((srv) => (
+              {['Coffee', 'Tea', 'Snacks', 'Milkshakes', 'Juices', 'Fast Food', 'Biryani'].map((srv) => (
                 <span
                   key={srv}
-                  className="px-3 py-1 rounded-full bg-[#F5EBE1] border border-[#E8D6C4] text-xs font-bold text-[#543323]"
+                  className="px-3 py-1 rounded-full bg-[#F5EBE1] border border-[#E8D6C4] text-xs font-bold text-[#543323] uppercase tracking-wider"
                 >
                   {srv}
                 </span>
@@ -93,8 +108,8 @@ export default function HeroSection() {
                 <p className="text-xs text-[#7A6153]">Warangal’s Favorite</p>
               </div>
               <div>
-                <p className="font-serif text-2xl font-bold text-[#2C1810]">5+ Menu</p>
-                <p className="text-xs text-[#7A6153]">Chai, Coffee, Shakes & Bites</p>
+                <p className="font-serif text-2xl font-bold text-[#2C1810]">7 Categories</p>
+                <p className="text-xs text-[#7A6153]">Chai, Coffee, Biryani & More</p>
               </div>
               <div>
                 <p className="font-serif text-2xl font-bold text-[#2C1810]">7am - 10pm</p>
@@ -175,7 +190,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#2C1810]/75 via-[#2C1810]/40 to-[#2C1810]/75 flex items-center justify-between px-6 sm:px-12 text-white">
               <div className="flex items-center gap-3">
                 <span className="text-xs sm:text-sm font-bold tracking-wider uppercase text-[#EEDBCA]">
-                  Tea • Coffee • Fast Food • Milkshakes • Juices
+                  COFFEE • TEA • SNACKS • MILKSHAKES • JUICES • FAST FOOD • BIRYANI
                 </span>
                 <span className="hidden sm:inline text-white/50">•</span>
                 <span className="hidden sm:inline text-xs sm:text-sm text-white/90">
@@ -186,7 +201,7 @@ export default function HeroSection() {
                 href="#offers"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#F5EBE1] hover:text-[#D89255] transition-colors shrink-0"
               >
-                <span>View Kathalu Deals</span>
+                <span>View Deals</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>

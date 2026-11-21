@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Coffee, ArrowUp, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowUp, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { CAFE_INFO } from '@/data/coffeeData';
 
 export default function Footer() {
@@ -11,41 +12,63 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#462E22] text-[#F5EBE1] pt-16 pb-8 border-t border-[#362117]">
+    <footer className="bg-[#1C120C] text-[#F5EBE1] pt-16 pb-8 border-t border-[#362117]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#5E4233]">
-          {/* Col 1: Brand & Socials (Matching Mockup) */}
+        {/* Full Official Banner Logo in Footer */}
+        <div className="mb-12 p-3 sm:p-4 rounded-3xl bg-black border border-[#3E2317] max-w-3xl mx-auto">
+          <div className="relative w-full aspect-[1024/163]">
+            <Image
+              src={CAFE_INFO.logoBanner}
+              alt="Coffee Kathalu Official Logo Banner"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#3E2317]">
+          {/* Col 1: Brand & Socials */}
           <div className="lg:col-span-4 flex flex-col items-start">
-            <Link href="#home" className="flex items-center gap-2 mb-4 group">
-              <div className="w-10 h-10 rounded-full bg-[#2C1810] text-[#EEDBCA] flex items-center justify-center border border-[#6E4E3C]">
-                <Coffee className="w-5 h-5 text-[#EEDBCA]" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-2xl font-bold tracking-tight text-[#FAF5EF]">
-                  Coffee Kathalu
-                </span>
-                <span className="text-[10px] tracking-widest text-[#D9BEA7] uppercase font-semibold">
-                  WARANGAL • RANGASHAIPET
-                </span>
+            <Link href="#home" className="flex items-center gap-3 mb-4 group">
+              <div className="relative h-11 w-32 rounded-lg bg-black p-1 border border-[#543323] overflow-hidden">
+                <Image
+                  src={CAFE_INFO.logoEnglish}
+                  alt="Coffee Kathalu"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </Link>
 
-            <p className="text-xs text-[#D9BEA7] leading-relaxed max-w-sm mb-5">
-              A heartwarming cafe for every mood and every story. Freshly brewed South Indian filter kaapi, authentic dum chai, thick milkshakes, and delicious fast food.
+            <p className="text-xs text-[#D9BEA7] leading-relaxed max-w-sm mb-3">
+              <strong className="text-white uppercase">{CAFE_INFO.tagline}</strong><br />
+              <span className="text-[#A76B43]">{CAFE_INFO.teluguTagline}</span>
             </p>
+
+            <p className="text-xs text-[#9E8373] leading-relaxed max-w-sm mb-4">
+              A sensory coffee & dining ritual for every mood. South Indian filter kaapi, dum chai, snacks, milkshakes, fresh juices, burgers, and dum biryani.
+            </p>
+
+            {/* Franchise inquiry pill */}
+            <div className="mb-5 bg-[#2C1810] px-3.5 py-1.5 rounded-xl border border-[#543323] text-xs">
+              <span className="text-[#D89255] font-bold">FOR FRANCHISE: </span>
+              <a href={`tel:${CAFE_INFO.franchisePhone}`} className="text-white font-mono font-bold hover:underline">
+                {CAFE_INFO.franchisePhone}
+              </a>
+            </div>
 
             {/* Instagram Tag Badge */}
             <a
               href={CAFE_INFO.social.instagram}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#362117] text-[#EEDBCA] text-xs font-bold mb-5 hover:bg-[#C27A45] hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2C1810] text-[#EEDBCA] text-xs font-bold mb-5 hover:bg-[#C27A45] hover:text-white transition-colors"
             >
               <span>Instagram:</span>
               <span className="text-[#D89255] hover:underline font-mono">{CAFE_INFO.social.instagramTag}</span>
             </a>
 
-            {/* Social Icons with circular borders (Matching Mockup) */}
+            {/* Social Icons */}
             <div className="flex items-center gap-3">
               {/* Facebook */}
               <a
@@ -91,34 +114,16 @@ export default function Footer() {
           {/* Col 2: Services / Offerings */}
           <div className="lg:col-span-2">
             <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-white mb-4">
-              Our Services
+              What We Serve
             </h4>
-            <ul className="space-y-2.5 text-xs text-[#D9BEA7]">
-              <li>
-                <a href="#menu" className="hover:text-white transition-colors">
-                  Artisan Teas & Chai
-                </a>
-              </li>
-              <li>
-                <a href="#menu" className="hover:text-white transition-colors">
-                  Specialty Coffee
-                </a>
-              </li>
-              <li>
-                <a href="#menu" className="hover:text-white transition-colors">
-                  Delicious Fast Food
-                </a>
-              </li>
-              <li>
-                <a href="#menu" className="hover:text-white transition-colors">
-                  Thick Milkshakes
-                </a>
-              </li>
-              <li>
-                <a href="#menu" className="hover:text-white transition-colors">
-                  Fresh Juices & Coolers
-                </a>
-              </li>
+            <ul className="space-y-2 text-xs text-[#D9BEA7]">
+              {['Coffee', 'Tea', 'Snacks', 'Milkshakes', 'Juices', 'Fast Food', 'Biryani'].map((s) => (
+                <li key={s}>
+                  <a href="#menu" className="hover:text-white transition-colors">
+                    {s}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -127,7 +132,7 @@ export default function Footer() {
             <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-white mb-4">
               Navigation
             </h4>
-            <ul className="space-y-2.5 text-xs text-[#D9BEA7]">
+            <ul className="space-y-2 text-xs text-[#D9BEA7]">
               <li>
                 <a href="#home" className="hover:text-white transition-colors">
                   Home
@@ -191,7 +196,7 @@ export default function Footer() {
               </div>
 
               <div className="pt-2">
-                <div className="flex items-start gap-2 bg-[#362117] p-2.5 rounded-xl border border-[#543323]">
+                <div className="flex items-start gap-2 bg-[#2C1810] p-2.5 rounded-xl border border-[#3E2317]">
                   <Clock className="w-4 h-4 text-[#D89255] shrink-0 mt-0.5" />
                   <div className="text-[11px] text-[#EEDBCA]">
                     <span className="font-bold text-white block">Business Hours (Open Daily)</span>
@@ -204,15 +209,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#BFA695]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8C6249]">
           <p>
-            &copy; 2026. All Rights Reserved by <strong>Coffee Kathalu</strong>, Warangal.
+            &copy; 2026. All Rights Reserved by <strong>Coffee Kathalu Cafe</strong>, Warangal.
           </p>
           <div className="flex items-center gap-4">
-            <span>Tea • Coffee • Fastfood • Milkshakes • Juices</span>
+            <span>Every Cup Has A Story...</span>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-full bg-[#362117] hover:bg-[#C27A45] text-white transition-colors"
+              className="p-2 rounded-full bg-[#2C1810] hover:bg-[#C27A45] text-white transition-colors"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />

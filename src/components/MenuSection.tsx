@@ -11,13 +11,16 @@ export default function MenuSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
+  // Matches exact items from logo banner: COFFEE | TEA | SNACKS | MILKSHAKES | JUICES | FAST FOOD | BIRYANI
   const categories = [
     { id: 'all', label: 'All Items' },
-    { id: 'tea', label: 'Tea & Chai' },
     { id: 'coffee', label: 'Coffee' },
-    { id: 'fastfood', label: 'Fast Food' },
+    { id: 'tea', label: 'Tea' },
+    { id: 'snacks', label: 'Snacks' },
     { id: 'milkshakes', label: 'Milkshakes' },
-    { id: 'juices', label: 'Juices & Coolers' },
+    { id: 'juices', label: 'Juices' },
+    { id: 'fastfood', label: 'Fast Food' },
+    { id: 'biryani', label: 'Biryani' },
   ];
 
   // Filter items
@@ -51,17 +54,17 @@ export default function MenuSection() {
             Our Menu
           </h2>
           <p className="text-sm sm:text-base text-[#6E5548] leading-relaxed">
-            Tea, Coffee, Fast Food, Thick Milkshakes, and Refreshing Juices — prepared fresh to make every moment memorable.
+            Coffee, Tea, Snacks, Milkshakes, Juices, Fast Food, and Biryani — prepared fresh to make every moment memorable.
           </p>
         </div>
 
         {/* Categories Tab Bar */}
-        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-8">
+        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-2.5 mb-8">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+              className={`px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
                 selectedCategory === cat.id
                   ? 'bg-[#543323] text-white shadow-md scale-105'
                   : 'bg-[#F5EBE1] text-[#543323] hover:bg-[#EEDBCA] border border-[#E8D6C4]'
@@ -78,7 +81,7 @@ export default function MenuSection() {
             <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-[#8C6249]" />
             <input
               type="text"
-              placeholder="Search Chai, Kaapi, Burgers, Shakes, Coolers..."
+              placeholder="Search Coffee, Chai, Biryani, Shakes, Burgers..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-3 bg-white rounded-full text-xs text-[#2C1810] placeholder-[#9E8373] border border-[#E8D6C4] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
@@ -91,7 +94,7 @@ export default function MenuSection() {
           <div className="text-center py-16 bg-[#F5EBE1]/40 rounded-3xl border border-[#E8D6C4] max-w-md mx-auto">
             <Coffee className="w-10 h-10 text-[#C27A45] mx-auto mb-3" />
             <p className="text-[#3D2314] font-medium mb-1">No items found</p>
-            <p className="text-xs text-[#8C6249]">Try searching for &quot;Kaapi&quot;, &quot;Chai&quot;, &quot;Burger&quot;, or &quot;Shake&quot;</p>
+            <p className="text-xs text-[#8C6249]">Try searching for &quot;Kaapi&quot;, &quot;Biryani&quot;, &quot;Chai&quot;, or &quot;Shake&quot;</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
