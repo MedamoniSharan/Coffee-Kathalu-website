@@ -21,18 +21,21 @@ export default function AboutSection() {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-[32px] overflow-hidden shadow-xl border-4 border-white aspect-[4/3] group">
               <Image
-                src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80"
-                alt="Our Dedicated Team at Coffee Kathalu Warangal"
+                src={CAFE_INFO.storefrontImage}
+                alt="Coffee Kathalu Storefront - Rangashaipet, Warangal"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/75 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <p className="text-xs font-semibold tracking-wider uppercase text-[#EEDBCA]">
-                  Rangashaipet, Warangal
+                <span className="inline-block px-2.5 py-1 rounded-md bg-[#D89255] text-white text-[10px] font-bold uppercase tracking-wider mb-2">
+                  19-6-288/1, Rangashaipet, Warangal
+                </span>
+                <p className="font-serif text-xl sm:text-2xl font-bold">
+                  Coffee Kathalu Cafe Storefront
                 </p>
-                <p className="font-serif text-xl font-bold">
-                  Brewing Stories Over Every Cup & Bite
+                <p className="text-xs text-[#EEDBCA] mt-1">
+                  &quot;Every cup has a story... ప్రతి కప్పుది ఓ కథే...&quot;
                 </p>
               </div>
             </div>

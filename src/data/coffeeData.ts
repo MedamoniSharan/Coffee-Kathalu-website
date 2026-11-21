@@ -39,6 +39,8 @@ export const CAFE_INFO = {
   logoEnglish: '/logo-english.png',
   logoTelugu: '/logo-telugu.png',
   logoBrand: '/logo-brand.png',
+  storefrontImage: '/coffee-kathalu-storefront.jpg',
+  storeRealSignboard: '/store-signboard-clean.jpg',
   address: {
     doorNo: '19-6-288/1',
     area: 'Rangashaipet',
@@ -354,8 +356,20 @@ export const MENU_ITEMS: MenuItem[] = [
 
 export const GALLERY_IMAGES = [
   {
+    id: 'gal-store-1',
+    title: 'Coffee Kathalu Storefront & Outdoor Seating',
+    category: 'Storefront',
+    url: '/coffee-kathalu-storefront.jpg',
+  },
+  {
+    id: 'gal-store-2',
+    title: 'Illuminated 3D Signboard & Facade',
+    category: 'Rangashaipet',
+    url: '/store-signboard-clean.jpg',
+  },
+  {
     id: 'gal-1',
-    title: 'Authentic Filter Kaapi Pour',
+    title: 'Authentic South Indian Filter Kaapi',
     category: 'Coffee',
     url: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
   },
@@ -367,27 +381,15 @@ export const GALLERY_IMAGES = [
   },
   {
     id: 'gal-3',
-    title: 'Chilled Thick Milkshakes',
+    title: 'Chilled KitKat & Oreo Thick Milkshakes',
     category: 'Milkshakes',
     url: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80',
   },
   {
-    id: 'gal-4',
-    title: 'Sizzling Burgers & Peri Peri Fries',
-    category: 'Fast Food',
-    url: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
-  },
-  {
     id: 'gal-5',
-    title: 'Special Handi Dum Biryani',
+    title: 'Special Handi Dum Biryani & Rice',
     category: 'Biryani',
     url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'gal-6',
-    title: 'Warm Friends Hangout at Rangashaipet',
-    category: 'Atmosphere',
-    url: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
