@@ -16,17 +16,18 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Coffee MOOD | Modern Artisanal Cafe & Specialty Brews',
+  title: 'Coffee Kathalu | Warangal - Tea, Coffee, Fast Food, Milkshakes & Juices',
   description:
-    'A Coffee Ritual for Every Mood. Single-origin Mexican coffee, velvety macchiatos, artisan pastries, and warm ambiance.',
+    'Welcome to Coffee Kathalu at 19-6-288/1, Rangashaipet, Warangal-506005. Serving authentic South Indian filter kaapi, dum chai, crispy fast food, thick shakes, and fresh juices. Open daily 7:00 AM – 10:00 PM. Call +91 9014891413.',
   keywords: [
-    'coffee cafe',
-    'specialty coffee',
-    'macchiato',
-    'single origin',
-    'artisan roastery',
-    'coffee mood',
     'coffee kathalu',
+    'coffee kathalu warangal',
+    'cafe in rangashaipet',
+    'best filter coffee warangal',
+    'tea and coffee warangal',
+    'fastfood warangal',
+    'milkshakes warangal',
+    'juices rangashaipet',
   ],
   icons: {
     icon: '/favicon.ico',

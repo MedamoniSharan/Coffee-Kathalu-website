@@ -8,10 +8,10 @@ import { MENU_ITEMS } from '@/data/coffeeData';
 
 export default function TodaysSpecial() {
   const { addToCart } = useCart();
-  const specialItem = MENU_ITEMS.find((m) => m.id === 'menu-8') || MENU_ITEMS[0];
+  const specialItem = MENU_ITEMS.find((m) => m.id === 'cof-1') || MENU_ITEMS[0];
 
-  // Countdown timer to midnight
-  const [timeLeft, setTimeLeft] = useState({ hours: 5, minutes: 42, seconds: 18 });
+  // Countdown timer to closing time
+  const [timeLeft, setTimeLeft] = useState({ hours: 4, minutes: 28, seconds: 45 });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -23,7 +23,7 @@ export default function TodaysSpecial() {
         } else if (prev.hours > 0) {
           return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
         }
-        return { hours: 6, minutes: 0, seconds: 0 };
+        return { hours: 5, minutes: 0, seconds: 0 };
       });
     }, 1000);
 
@@ -53,7 +53,7 @@ export default function TodaysSpecial() {
               {/* Badge Header */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#3D2314]/80 border border-[#C27A45]/40 text-[#EEDBCA] text-xs font-bold uppercase tracking-wider mb-4">
                 <Flame className="w-4 h-4 text-[#D89255]" />
-                <span>Today’s Special Roast</span>
+                <span>Today’s Special Brew</span>
               </div>
 
               {/* Title Matching Mockup: "Coffee Time" */}
@@ -62,14 +62,14 @@ export default function TodaysSpecial() {
               </h2>
 
               <p className="text-[#D9BEA7] text-base sm:text-lg max-w-lg mb-8 leading-relaxed">
-                Indulge in our signature Smoked Amber Mocha, crafted with single-origin Colombian beans, slow-melted Belgian hazelnut ganache, and Madagascar spices.
+                Experience our authentic Chikmagalur single-estate Filter Kaapi, brewed fresh with rich frothy crown. Pair it with crispy french fries or a piping hot grilled sandwich.
               </p>
 
               {/* Countdown Timer */}
               <div className="mb-8 flex items-center gap-3">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-[#EEDBCA] uppercase tracking-wider">
                   <Clock className="w-4 h-4 text-[#D89255]" />
-                  <span>Ends in:</span>
+                  <span>Closing at 10:00 PM:</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="bg-[#2C1810]/90 border border-[#543323] px-3 py-1.5 rounded-xl text-center">
@@ -99,16 +99,16 @@ export default function TodaysSpecial() {
               <div className="flex flex-wrap items-center gap-5">
                 <div className="flex items-baseline gap-2">
                   <span className="font-serif text-3xl sm:text-4xl font-black text-[#F5EBE1]">
-                    ${specialItem.price.toFixed(2)}
+                    ₹{specialItem.price}
                   </span>
                   <span className="text-sm sm:text-base text-[#9E8373] line-through font-semibold">
-                    ${specialItem.originalPrice?.toFixed(2) || '15.00'}
+                    ₹60
                   </span>
                 </div>
 
                 <button
                   onClick={() => addToCart(specialItem, 1, 'Regular')}
-                  className="px-8 py-4 rounded-full bg-[#C27A45] hover:bg-[#D89255] text-white text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-lg hover:shadow-orange-900/30 flex items-center gap-2 active:scale-95"
+                  className="px-8 py-4 rounded-full bg-[#C27A45] hover:bg-[#D89255] text-white text-xs font-bold tracking-wider uppercase transition-all duration-200 shadow-lg hover:shadow-orange-900/30 flex items-center gap-2 active:scale-95"
                 >
                   <span>Order Special Now</span>
                   <ArrowRight className="w-4 h-4" />
@@ -120,8 +120,8 @@ export default function TodaysSpecial() {
             <div className="lg:col-span-5 relative flex justify-center">
               <div className="relative w-full max-w-[340px] aspect-square rounded-3xl overflow-hidden shadow-2xl border-2 border-[#543323] group">
                 <Image
-                  src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80"
-                  alt="Today's Special: Coffee Time"
+                  src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80"
+                  alt="Today's Special: Coffee Time at Coffee Kathalu"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -135,8 +135,8 @@ export default function TodaysSpecial() {
                 {/* Steaming Overlay hint */}
                 <div className="absolute bottom-4 left-4 right-4 bg-[#1A0D08]/85 backdrop-blur-md p-3.5 rounded-2xl border border-[#3E2317] flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold text-[#EEDBCA]">Reserve Roast</p>
-                    <p className="text-[11px] text-[#A76B43]">Freshly Ground & Extracted</p>
+                    <p className="text-xs font-bold text-[#EEDBCA]">Coffee Kathalu Reserve</p>
+                    <p className="text-[11px] text-[#A76B43]">Rangashaipet, Warangal</p>
                   </div>
                   <Sparkles className="w-4 h-4 text-[#D89255]" />
                 </div>

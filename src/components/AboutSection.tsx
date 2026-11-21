@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Heart, Award, Users, CheckCircle } from 'lucide-react';
+import { Heart, Award, Users, CheckCircle, Clock, MapPin, Phone } from 'lucide-react';
+import { CAFE_INFO } from '@/data/coffeeData';
 
 export default function AboutSection() {
   return (
@@ -21,17 +22,17 @@ export default function AboutSection() {
             <div className="relative rounded-[32px] overflow-hidden shadow-xl border-4 border-white aspect-[4/3] group">
               <Image
                 src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80"
-                alt="Our Dedicated Barista Team at Coffee MOOD"
+                alt="Our Dedicated Team at Coffee Kathalu Warangal"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/70 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <p className="text-xs font-semibold tracking-wider uppercase text-[#EEDBCA]">
-                  Certified Specialty Baristas
+                  Rangashaipet, Warangal
                 </p>
                 <p className="font-serif text-xl font-bold">
-                  Crafting Every Pour With Heart & Precision
+                  Brewing Stories Over Every Cup & Bite
                 </p>
               </div>
             </div>
@@ -40,8 +41,8 @@ export default function AboutSection() {
             <div className="absolute -bottom-6 -right-4 sm:right-6 bg-[#2C1810] text-[#EEDBCA] px-5 py-3.5 rounded-2xl shadow-xl border border-[#D9BEA7]/30 flex items-center gap-3">
               <Award className="w-6 h-6 text-[#D89255]" />
               <div>
-                <p className="font-serif text-lg font-bold text-white leading-tight">12+ Years</p>
-                <p className="text-[11px] text-[#A76B43]">Artisan Coffee Roasting</p>
+                <p className="font-serif text-lg font-bold text-white leading-tight">7 AM – 10 PM</p>
+                <p className="text-[11px] text-[#A76B43]">Open Every Single Day</p>
               </div>
             </div>
           </div>
@@ -53,48 +54,59 @@ export default function AboutSection() {
               Our Story & Heritage
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-[#2C1810] tracking-tight uppercase mb-6">
-              About US
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-[#2C1810] tracking-tight uppercase mb-5">
+              About Coffee Kathalu
             </h2>
 
-            <p className="text-base text-[#5D463B] leading-relaxed mb-6 font-normal">
-              We currently have locations in Arkansas, California, Florida, Georgia, North Carolina,
-              Pennsylvania, South Carolina, and Washington. If you hold an active real estate license in any of these
-              states, you can simply transfer your license to Coffee MOOD Roasters. We are passionate about
-              direct-trade farm partnerships, micro-batch roasts, and building a welcoming neighborhood sanctuary.
+            <p className="text-base text-[#5D463B] leading-relaxed mb-4 font-normal">
+              Located at <strong>Rangashaipet, Warangal</strong>, <strong>Coffee Kathalu</strong> is born from the belief that life’s finest moments happen when people come together over a steaming beverage. In Telugu, <em>&quot;Kathalu&quot;</em> translates to <em>stories</em> — and our cafe is a welcoming space where laughter, friendships, and conversations spark naturally.
             </p>
 
-            <p className="text-sm text-[#7A6153] leading-relaxed mb-8">
-              Every bean is ethically harvested, sun-dried, and roasted in small batches to preserve its distinct geographic terroir, vibrant acidity, and velvety chocolate notes.
+            <p className="text-sm text-[#7A6153] leading-relaxed mb-6">
+              Whether you are stopping by at 7 AM for a kickstart with our signature South Indian Filter Kaapi and authentic Dum Chai, or dropping in with friends for crispy Burgers, Peri-Peri Fries, thick KitKat Shakes, and chilled Fruit Mojitos, our team prepares every item with quality ingredients and genuine warmth.
             </p>
 
-            {/* Pillars checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 w-full">
-              <div className="flex items-center gap-2.5">
-                <CheckCircle className="w-4 h-4 text-[#C27A45] shrink-0" />
-                <span className="text-xs font-semibold text-[#3D2314]">100% Direct Fair-Trade</span>
+            {/* Quick Details Box */}
+            <div className="w-full bg-[#F5EBE1] rounded-2xl p-4 border border-[#E8D6C4] mb-6 space-y-2 text-xs text-[#543323]">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-[#C27A45] shrink-0" />
+                <span className="font-semibold">{CAFE_INFO.address.full}</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <CheckCircle className="w-4 h-4 text-[#C27A45] shrink-0" />
-                <span className="text-xs font-semibold text-[#3D2314]">Daily Small-Batch Roasts</span>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-[#C27A45] shrink-0" />
+                <span>Monday to Sunday: <strong>7:00 AM – 10:00 PM</strong></span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <CheckCircle className="w-4 h-4 text-[#C27A45] shrink-0" />
-                <span className="text-xs font-semibold text-[#3D2314]">Eco-Friendly Compostable Cups</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <CheckCircle className="w-4 h-4 text-[#C27A45] shrink-0" />
-                <span className="text-xs font-semibold text-[#3D2314]">Award-Winning Latte Art</span>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-[#C27A45] shrink-0" />
+                <span>Direct Contact: <strong>+91 {CAFE_INFO.phone}</strong></span>
               </div>
             </div>
 
-            {/* Button Matching Mockup: "See About Us" */}
-            <a
-              href="#contact"
-              className="px-8 py-3.5 rounded-full bg-[#543323] hover:bg-[#3D2314] text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
-            >
-              See About Us
-            </a>
+            {/* 5 Service offerings */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-8 w-full">
+              {['Artisan Teas', 'Specialty Coffee', 'Crispy Fast Food', 'Thick Milkshakes', 'Fresh Juices & Coolers'].map((item) => (
+                <div key={item} className="flex items-center gap-2">
+                  <CheckCircle className="w-3.5 h-3.5 text-[#C27A45] shrink-0" />
+                  <span className="text-xs font-bold text-[#3D2314]">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="#contact"
+                className="px-7 py-3 rounded-full bg-[#543323] hover:bg-[#3D2314] text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
+              >
+                Visit Our Cafe
+              </a>
+              <a
+                href={`tel:${CAFE_INFO.phone}`}
+                className="px-7 py-3 rounded-full border border-[#543323] text-[#543323] hover:bg-[#543323] hover:text-white text-xs font-bold uppercase tracking-wider transition-all duration-200"
+              >
+                Call Us
+              </a>
+            </div>
           </div>
         </div>
       </div>

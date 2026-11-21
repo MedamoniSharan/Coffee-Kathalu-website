@@ -105,7 +105,7 @@ export default function CartDrawer() {
               <div className="bg-[#F5EBE1] p-4 rounded-2xl w-full max-w-xs border border-[#E8D6C4] mb-6 text-xs text-[#543323] text-left space-y-1">
                 <p><span className="font-bold">Order #:</span> {orderNumber}</p>
                 <p><span className="font-bold">Est. Time:</span> 12 - 15 mins</p>
-                <p><span className="font-bold">Total Paid:</span> ${total.toFixed(2)}</p>
+                <p><span className="font-bold">Total Paid:</span> ₹{total.toFixed(0)}</p>
               </div>
               <button
                 onClick={handleFinish}
@@ -123,7 +123,7 @@ export default function CartDrawer() {
                 Your tray is currently empty
               </p>
               <p className="text-xs text-[#7A6153] max-w-xs mb-6">
-                Discover our signature macchiato, Mexican spiced coffee, and artisanal bites to add to your tray.
+                Discover our signature Filter Kaapi, Dum Chai, KitKat Thick Shakes, and Peri-Peri burgers.
               </p>
               <button
                 onClick={() => setIsCartOpen(false)}
@@ -170,13 +170,13 @@ export default function CartDrawer() {
                             </button>
                           </div>
                           <p className="text-[11px] text-[#8C6249]">
-                            {ci.size} • {ci.milk}
+                            {ci.size} • {ci.item.categoryLabel}
                           </p>
                         </div>
 
                         <div className="flex items-center justify-between pt-2">
                           <span className="font-bold text-xs text-[#2C1810]">
-                            ${(itemPrice * ci.quantity).toFixed(2)}
+                            ₹{(itemPrice * ci.quantity).toFixed(0)}
                           </span>
 
                           <div className="flex items-center gap-2 bg-[#F5EBE1] rounded-full px-2 py-0.5 border border-[#E8D6C4]">
@@ -235,17 +235,17 @@ export default function CartDrawer() {
                 <div className="space-y-1.5 text-xs text-[#6E5548] border-b border-[#E8D6C4] pb-3">
                   <div className="flex justify-between">
                     <span>Subtotal</span>
-                    <span className="font-semibold text-[#2C1810]">${subtotal.toFixed(2)}</span>
+                    <span className="font-semibold text-[#2C1810]">₹{subtotal.toFixed(0)}</span>
                   </div>
                   {discount > 0 && (
                     <div className="flex justify-between text-emerald-700 font-semibold">
                       <span>Discount</span>
-                      <span>-${discount.toFixed(2)}</span>
+                      <span>-₹{discount.toFixed(0)}</span>
                     </div>
                   )}
                   <div className="flex justify-between">
-                    <span>Estimated Tax (8%)</span>
-                    <span>${(total * 0.08).toFixed(2)}</span>
+                    <span>GST (5%)</span>
+                    <span>₹{(total * 0.05).toFixed(0)}</span>
                   </div>
                 </div>
 
@@ -254,7 +254,7 @@ export default function CartDrawer() {
                     Total
                   </span>
                   <span className="font-serif text-2xl font-black text-[#2C1810]">
-                    ${(total * 1.08).toFixed(2)}
+                    ₹{(total * 1.05).toFixed(0)}
                   </span>
                 </div>
 

@@ -50,13 +50,13 @@ export default function SpecialOffers() {
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EEDBCA] text-[#543323] text-xs font-bold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5 text-[#C27A45]" />
-            Limited Time Specials
+            Special Deals of the Day
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-[#2C1810] tracking-tight uppercase mb-4">
             Enjoy The New Sale Offers
           </h2>
           <p className="text-sm sm:text-base text-[#6E5548] leading-relaxed">
-            Experience our hand-selected single-origin roasts and signature seasonal espresso creations with exclusive savings up to 30% off.
+            Relish handcrafted cups of authentic filter kaapi, dum chai, loaded burgers, and creamy milkshakes with exclusive deals at Coffee Kathalu.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export default function SpecialOffers() {
                 key={item.id}
                 className="bg-[#FBF7F2] rounded-3xl overflow-hidden border border-[#E8D6C4] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group hover:-translate-y-1.5"
               >
-                {/* Top Image of Coffee Cup on Saucer */}
+                {/* Top Image */}
                 <div className="relative w-full aspect-[4/3] bg-[#EEDBCA]/40 overflow-hidden">
                   <Image
                     src={item.image}
@@ -87,11 +87,11 @@ export default function SpecialOffers() {
                 {/* Card Content */}
                 <div className="p-5 flex-1 flex flex-col justify-between text-center">
                   <div>
-                    <h3 className="font-serif text-xl font-bold text-[#2C1810] mb-1 group-hover:text-[#A76B43] transition-colors">
+                    <h3 className="font-serif text-lg font-bold text-[#2C1810] mb-1 group-hover:text-[#A76B43] transition-colors">
                       {item.name}
                     </h3>
-                    <p className="text-xs font-semibold text-[#8C6249] tracking-wide mb-3">
-                      Top Mexican Coffee 30% OFF
+                    <p className="text-xs font-bold text-[#8C6249] tracking-wide mb-2 uppercase">
+                      {item.categoryLabel} Special Offer
                     </p>
                     <p className="text-xs text-[#7A6153] line-clamp-2 mb-4 leading-relaxed">
                       {item.description}
@@ -102,11 +102,11 @@ export default function SpecialOffers() {
                   <div className="pt-2 border-t border-[#E8D6C4]/60 flex flex-col items-center">
                     <div className="flex items-baseline gap-2 mb-3">
                       <span className="font-serif text-2xl font-black text-[#2C1810]">
-                        ${item.price.toFixed(2)}
+                        ₹{item.price}
                       </span>
                       {item.originalPrice && (
-                        <span className="text-xs text-[#9E8373] line-through font-medium">
-                          ${item.originalPrice.toFixed(2)}
+                        <span className="text-xs text-[#9E8373] line-through font-semibold">
+                          ₹{item.originalPrice}
                         </span>
                       )}
                     </div>

@@ -2,40 +2,41 @@
 
 import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
-import { Search, Star, Plus, Check, Coffee, UtensilsCrossed } from 'lucide-react';
+import { Search, Star, Plus, Check, Coffee, Sparkles } from 'lucide-react';
 import { MENU_ITEMS } from '@/data/coffeeData';
 import { useCart } from '@/context/CartContext';
 
 export default function MenuSection() {
   const { addToCart, cart } = useCart();
-  const [activeTab, setActiveTab] = useState<'coffee' | 'food'>('coffee');
-  const [subCategory, setSubCategory] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const categories = [
+    { id: 'all', label: 'All Items' },
+    { id: 'tea', label: 'Tea & Chai' },
+    { id: 'coffee', label: 'Coffee' },
+    { id: 'fastfood', label: 'Fast Food' },
+    { id: 'milkshakes', label: 'Milkshakes' },
+    { id: 'juices', label: 'Juices & Coolers' },
+  ];
 
   // Filter items
   const filteredItems = useMemo(() => {
     return MENU_ITEMS.filter((item) => {
-      // Main tab filter
-      const matchesMainTab =
-        activeTab === 'coffee'
-          ? ['hot', 'cold', 'signature'].includes(item.category)
-          : ['food', 'dessert'].includes(item.category);
+      const matchesCat =
+        selectedCategory === 'all' ? true : item.category === selectedCategory;
 
-      // Sub-category filter
-      const matchesSub =
-        subCategory === 'all' ? true : item.category === subCategory;
-
-      // Search query
       const matchesSearch =
         item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.categoryLabel.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.tastingNotes.some((t) =>
           t.toLowerCase().includes(searchQuery.toLowerCase())
         );
 
-      return matchesMainTab && matchesSub && matchesSearch;
+      return matchesCat && matchesSearch;
     });
-  }, [activeTab, subCategory, searchQuery]);
+  }, [selectedCategory, searchQuery]);
 
   return (
     <section id="menu" className="py-24 bg-[#FBF7F2] relative">
@@ -43,133 +44,44 @@ export default function MenuSection() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EEDBCA] text-[#543323] text-xs font-bold uppercase tracking-wider mb-3">
-            <Coffee className="w-3.5 h-3.5 text-[#C27A45]" />
-            Artisanal Selection
+            <Sparkles className="w-3.5 h-3.5 text-[#C27A45]" />
+            What We Serve
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-[#2C1810] tracking-tight uppercase mb-4">
             Our Menu
           </h2>
           <p className="text-sm sm:text-base text-[#6E5548] leading-relaxed">
-            Every cup is brewed with precision from freshly micro-roasted beans. Pair with our daily house-made French bakery specials and desserts.
+            Tea, Coffee, Fast Food, Thick Milkshakes, and Refreshing Juices — prepared fresh to make every moment memorable.
           </p>
         </div>
 
-        {/* Main Tab Switch: "Coffee Menu" vs "Food Menu" (Matches Mockup) */}
-        <div className="flex justify-center items-center gap-4 mb-8">
-          <button
-            onClick={() => {
-              setActiveTab('coffee');
-              setSubCategory('all');
-            }}
-            className={`px-8 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-200 flex items-center gap-2 ${
-              activeTab === 'coffee'
-                ? 'bg-[#543323] text-white shadow-md'
-                : 'bg-[#F5EBE1] text-[#543323] hover:bg-[#EEDBCA] border border-[#E8D6C4]'
-            }`}
-          >
-            <Coffee className="w-4 h-4" />
-            <span>Coffee Menu</span>
-          </button>
-
-          <button
-            onClick={() => {
-              setActiveTab('food');
-              setSubCategory('all');
-            }}
-            className={`px-8 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-200 flex items-center gap-2 ${
-              activeTab === 'food'
-                ? 'bg-[#543323] text-white shadow-md'
-                : 'bg-[#F5EBE1] text-[#543323] hover:bg-[#EEDBCA] border border-[#E8D6C4]'
-            }`}
-          >
-            <UtensilsCrossed className="w-4 h-4" />
-            <span>Food Menu</span>
-          </button>
-        </div>
-
-        {/* Search & Subcategory Filter Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 bg-[#F5EBE1]/70 p-3 rounded-2xl border border-[#E8D6C4]">
-          {/* Subcategories */}
-          <div className="flex flex-wrap gap-2">
+        {/* Categories Tab Bar */}
+        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-8">
+          {categories.map((cat) => (
             <button
-              onClick={() => setSubCategory('all')}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                subCategory === 'all'
-                  ? 'bg-[#2C1810] text-[#EEDBCA]'
-                  : 'bg-white/80 text-[#543323] hover:bg-white'
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)}
+              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                selectedCategory === cat.id
+                  ? 'bg-[#543323] text-white shadow-md scale-105'
+                  : 'bg-[#F5EBE1] text-[#543323] hover:bg-[#EEDBCA] border border-[#E8D6C4]'
               }`}
             >
-              All {activeTab === 'coffee' ? 'Brews' : 'Bites'}
+              {cat.label}
             </button>
+          ))}
+        </div>
 
-            {activeTab === 'coffee' ? (
-              <>
-                <button
-                  onClick={() => setSubCategory('hot')}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                    subCategory === 'hot'
-                      ? 'bg-[#2C1810] text-[#EEDBCA]'
-                      : 'bg-white/80 text-[#543323] hover:bg-white'
-                  }`}
-                >
-                  Hot Coffee
-                </button>
-                <button
-                  onClick={() => setSubCategory('cold')}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                    subCategory === 'cold'
-                      ? 'bg-[#2C1810] text-[#EEDBCA]'
-                      : 'bg-white/80 text-[#543323] hover:bg-white'
-                  }`}
-                >
-                  Cold Brews & Iced
-                </button>
-                <button
-                  onClick={() => setSubCategory('signature')}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                    subCategory === 'signature'
-                      ? 'bg-[#2C1810] text-[#EEDBCA]'
-                      : 'bg-white/80 text-[#543323] hover:bg-white'
-                  }`}
-                >
-                  Signature Blends
-                </button>
-              </>
-            ) : (
-              <>
-                <button
-                  onClick={() => setSubCategory('food')}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                    subCategory === 'food'
-                      ? 'bg-[#2C1810] text-[#EEDBCA]'
-                      : 'bg-white/80 text-[#543323] hover:bg-white'
-                  }`}
-                >
-                  Bakery & Tartines
-                </button>
-                <button
-                  onClick={() => setSubCategory('dessert')}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                    subCategory === 'dessert'
-                      ? 'bg-[#2C1810] text-[#EEDBCA]'
-                      : 'bg-white/80 text-[#543323] hover:bg-white'
-                  }`}
-                >
-                  Desserts & Cakes
-                </button>
-              </>
-            )}
-          </div>
-
-          {/* Search Input */}
-          <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8C6249]" />
+        {/* Search Input Bar */}
+        <div className="max-w-md mx-auto mb-10">
+          <div className="relative">
+            <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-[#8C6249]" />
             <input
               type="text"
-              placeholder="Search by name, flavor..."
+              placeholder="Search Chai, Kaapi, Burgers, Shakes, Coolers..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 bg-white rounded-full text-xs text-[#2C1810] placeholder-[#9E8373] border border-[#E8D6C4] focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
+              className="w-full pl-10 pr-4 py-3 bg-white rounded-full text-xs text-[#2C1810] placeholder-[#9E8373] border border-[#E8D6C4] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
             />
           </div>
         </div>
@@ -178,8 +90,8 @@ export default function MenuSection() {
         {filteredItems.length === 0 ? (
           <div className="text-center py-16 bg-[#F5EBE1]/40 rounded-3xl border border-[#E8D6C4] max-w-md mx-auto">
             <Coffee className="w-10 h-10 text-[#C27A45] mx-auto mb-3" />
-            <p className="text-[#3D2314] font-medium mb-1">No items match your search</p>
-            <p className="text-xs text-[#8C6249]">Try clearing your search term or select all categories</p>
+            <p className="text-[#3D2314] font-medium mb-1">No items found</p>
+            <p className="text-xs text-[#8C6249]">Try searching for &quot;Kaapi&quot;, &quot;Chai&quot;, &quot;Burger&quot;, or &quot;Shake&quot;</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -253,7 +165,7 @@ export default function MenuSection() {
                     <div>
                       <span className="text-xs text-[#8C6249] block">Price</span>
                       <span className="font-serif text-xl font-black text-[#2C1810]">
-                        ${item.price.toFixed(2)}
+                        ₹{item.price}
                       </span>
                     </div>
 

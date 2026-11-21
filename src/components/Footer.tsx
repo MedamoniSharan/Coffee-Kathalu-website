@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Coffee, ArrowUp } from 'lucide-react';
+import { Coffee, ArrowUp, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { CAFE_INFO } from '@/data/coffeeData';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -21,23 +22,34 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-2xl font-bold tracking-tight text-[#FAF5EF]">
-                  Coffee MOOD
+                  Coffee Kathalu
                 </span>
-                <span className="text-[10px] tracking-widest text-[#D9BEA7] uppercase">
-                  EST. 2014 • KATHALU CAFE
+                <span className="text-[10px] tracking-widest text-[#D9BEA7] uppercase font-semibold">
+                  WARANGAL • RANGASHAIPET
                 </span>
               </div>
             </Link>
 
-            <p className="text-xs text-[#D9BEA7] leading-relaxed max-w-sm mb-6">
-              A sensory coffee ritual for every mood. Artisanal micro-roasted beans, velvety extractions, and warm community hospitality.
+            <p className="text-xs text-[#D9BEA7] leading-relaxed max-w-sm mb-5">
+              A heartwarming cafe for every mood and every story. Freshly brewed South Indian filter kaapi, authentic dum chai, thick milkshakes, and delicious fast food.
             </p>
+
+            {/* Instagram Tag Badge */}
+            <a
+              href={CAFE_INFO.social.instagram}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#362117] text-[#EEDBCA] text-xs font-bold mb-5 hover:bg-[#C27A45] hover:text-white transition-colors"
+            >
+              <span>Instagram:</span>
+              <span className="text-[#D89255] hover:underline font-mono">{CAFE_INFO.social.instagramTag}</span>
+            </a>
 
             {/* Social Icons with circular borders (Matching Mockup) */}
             <div className="flex items-center gap-3">
               {/* Facebook */}
               <a
-                href="https://facebook.com"
+                href={CAFE_INFO.social.facebook}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
@@ -50,7 +62,7 @@ export default function Footer() {
 
               {/* Instagram */}
               <a
-                href="https://instagram.com"
+                href={CAFE_INFO.social.instagram}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -63,7 +75,7 @@ export default function Footer() {
 
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href={CAFE_INFO.social.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
@@ -73,23 +85,44 @@ export default function Footer() {
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
               </a>
-
-              {/* Twitter / X */}
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Twitter"
-                className="w-8 h-8 rounded-full border border-[#8C6249] flex items-center justify-center text-[#EEDBCA] hover:bg-[#C27A45] hover:text-white hover:border-[#C27A45] transition-all"
-              >
-                <svg className="w-3.5 h-3.5 fill-currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
             </div>
           </div>
 
-          {/* Col 2: Navigation (Matching Mockup) */}
+          {/* Col 2: Services / Offerings */}
+          <div className="lg:col-span-2">
+            <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-white mb-4">
+              Our Services
+            </h4>
+            <ul className="space-y-2.5 text-xs text-[#D9BEA7]">
+              <li>
+                <a href="#menu" className="hover:text-white transition-colors">
+                  Artisan Teas & Chai
+                </a>
+              </li>
+              <li>
+                <a href="#menu" className="hover:text-white transition-colors">
+                  Specialty Coffee
+                </a>
+              </li>
+              <li>
+                <a href="#menu" className="hover:text-white transition-colors">
+                  Delicious Fast Food
+                </a>
+              </li>
+              <li>
+                <a href="#menu" className="hover:text-white transition-colors">
+                  Thick Milkshakes
+                </a>
+              </li>
+              <li>
+                <a href="#menu" className="hover:text-white transition-colors">
+                  Fresh Juices & Coolers
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 3: Navigation Links */}
           <div className="lg:col-span-2">
             <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-white mb-4">
               Navigation
@@ -101,18 +134,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#menu" className="hover:text-white transition-colors">
-                  Our Menu
+                <a href="#offers" className="hover:text-white transition-colors">
+                  Daily Offers
                 </a>
               </li>
               <li>
                 <a href="#about" className="hover:text-white transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-white transition-colors">
-                  Contact Us
+                  About Coffee Kathalu
                 </a>
               </li>
               <li>
@@ -120,71 +148,68 @@ export default function Footer() {
                   Store Gallery
                 </a>
               </li>
-            </ul>
-          </div>
-
-          {/* Col 3: Legal & Policies (Matching Mockup) */}
-          <div className="lg:col-span-2">
-            <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-white mb-4">
-              Terms Of Use
-            </h4>
-            <ul className="space-y-2.5 text-xs text-[#D9BEA7]">
               <li>
-                <a href="#terms" className="hover:text-white transition-colors">
-                  Terms of Use
-                </a>
-              </li>
-              <li>
-                <a href="#privacy" className="hover:text-white transition-colors">
-                  Privacy and Policy
-                </a>
-              </li>
-              <li>
-                <a href="#refund" className="hover:text-white transition-colors">
-                  Refund & Roastery Guarantee
-                </a>
-              </li>
-              <li>
-                <a href="#cookie" className="hover:text-white transition-colors">
-                  Cookie Settings
+                <a href="#contact" className="hover:text-white transition-colors">
+                  Contact & Directions
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Contact Info (Matching Mockup Exact Info) */}
+          {/* Col 4: Contact Info (Exact Real Business Details) */}
           <div className="lg:col-span-4">
             <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-white mb-4">
               Contact Us
             </h4>
-            <div className="text-xs text-[#D9BEA7] space-y-2 leading-relaxed">
-              <p>
-                Akshya Nagar 1st Block 1st Cross,
-                <br />
-                Ramamurthy nagar, Bangalore 560016
-              </p>
-              <p className="pt-1 text-[#F5EBE1] font-semibold">
-                +1 202-918-2132
-              </p>
-              <p className="text-[#C27A45] hover:underline cursor-pointer">
-                www.moodcafe.com
-              </p>
+            <div className="text-xs text-[#D9BEA7] space-y-2.5 leading-relaxed">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-[#D89255] shrink-0 mt-0.5" />
+                <p>
+                  <strong>19-6-288/1</strong>, Rangashaipet,<br />
+                  Warangal - 506005, Telangana
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-[#D89255] shrink-0" />
+                <a
+                  href={`tel:${CAFE_INFO.phone}`}
+                  className="text-[#F5EBE1] font-bold hover:text-[#D89255] transition-colors"
+                >
+                  +91 {CAFE_INFO.phone}
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-[#D89255] shrink-0" />
+                <a
+                  href={`mailto:${CAFE_INFO.email}`}
+                  className="text-[#C27A45] hover:underline"
+                >
+                  {CAFE_INFO.email}
+                </a>
+              </div>
+
               <div className="pt-2">
-                <span className="inline-block px-2.5 py-1 rounded bg-[#362117] text-[10px] text-[#EEDBCA] uppercase font-bold tracking-wider">
-                  Open Daily • 7:00 AM – 11:00 PM
-                </span>
+                <div className="flex items-start gap-2 bg-[#362117] p-2.5 rounded-xl border border-[#543323]">
+                  <Clock className="w-4 h-4 text-[#D89255] shrink-0 mt-0.5" />
+                  <div className="text-[11px] text-[#EEDBCA]">
+                    <span className="font-bold text-white block">Business Hours (Open Daily)</span>
+                    Mon – Sun: <strong>7:00 AM – 10:00 PM</strong>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar (Matching Mockup Copyright) */}
+        {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#BFA695]">
           <p>
-            &copy; Copyright 2026. All Rights Reserved by Mood Cafe Time
+            &copy; 2026. All Rights Reserved by <strong>Coffee Kathalu</strong>, Warangal.
           </p>
           <div className="flex items-center gap-4">
-            <span>Crafted with Specialty Beans & Passion</span>
+            <span>Tea • Coffee • Fastfood • Milkshakes • Juices</span>
             <button
               onClick={scrollToTop}
               className="p-2 rounded-full bg-[#362117] hover:bg-[#C27A45] text-white transition-colors"

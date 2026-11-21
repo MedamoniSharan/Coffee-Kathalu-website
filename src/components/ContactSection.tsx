@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Send, MapPin, Phone, Mail, Clock, CheckCircle2 } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, Clock, CheckCircle2, MessageSquare } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { CAFE_INFO } from '@/data/coffeeData';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -50,64 +51,57 @@ export default function ContactSection() {
             Contact Us
           </h2>
           <p className="text-sm sm:text-base text-[#6E5548] leading-relaxed">
-            Have questions about our single-origin coffees, wholesale beans, or want to reserve a table for your next coffee meeting? Send us a note below.
+            Drop by for a comforting cup, call us for quick takeaways, or send us a message below. We look forward to seeing you at Coffee Kathalu!
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-5xl mx-auto">
           {/* Cafe Visit & Info Side */}
           <div className="lg:col-span-5 bg-[#F5EBE1] rounded-3xl p-8 border border-[#E8D6C4] shadow-sm">
-            <h3 className="font-serif text-2xl font-bold text-[#2C1810] mb-3">
-              Visit Coffee MOOD
+            <h3 className="font-serif text-2xl font-bold text-[#2C1810] mb-2">
+              Coffee Kathalu
             </h3>
-            <p className="text-xs text-[#7A6153] leading-relaxed mb-8">
-              Step into our light-filled cafe space with artisan espresso bars, comfortable seating, and fresh bakery pastries.
+            <p className="text-xs text-[#7A6153] leading-relaxed mb-6">
+              Tea, Coffee, Fast Food, Milkshakes & Juices at Rangashaipet, Warangal.
             </p>
 
             <div className="space-y-5">
+              {/* Address */}
               <div className="flex items-start gap-3.5">
                 <div className="w-9 h-9 rounded-full bg-[#543323] text-[#EEDBCA] flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-[#2C1810] uppercase tracking-wider">
-                    Our Roastery Address
+                    Cafe Address
                   </h4>
-                  <p className="text-xs text-[#6E5548] mt-0.5 leading-relaxed">
-                    Akshya Nagar 1st Block 1st Cross, Ramamurthy nagar, Bangalore 560016
+                  <p className="text-xs text-[#6E5548] mt-1 leading-relaxed">
+                    <strong>19-6-288/1</strong><br />
+                    Rangashaipet<br />
+                    Warangal - 506005, Telangana
                   </p>
                 </div>
               </div>
 
+              {/* Phone */}
               <div className="flex items-start gap-3.5">
                 <div className="w-9 h-9 rounded-full bg-[#543323] text-[#EEDBCA] flex items-center justify-center shrink-0 mt-0.5">
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-[#2C1810] uppercase tracking-wider">
-                    Call & Reservations
+                    Phone & Orders
                   </h4>
-                  <p className="text-xs text-[#6E5548] mt-0.5">
-                    +1 202-918-2132 / +91 98450 12345
-                  </p>
+                  <a
+                    href={`tel:${CAFE_INFO.phone}`}
+                    className="text-xs text-[#543323] font-bold mt-1 block hover:text-[#C27A45] transition-colors"
+                  >
+                    +91 {CAFE_INFO.phone}
+                  </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5">
-                <div className="w-9 h-9 rounded-full bg-[#543323] text-[#EEDBCA] flex items-center justify-center shrink-0 mt-0.5">
-                  <Clock className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-[#2C1810] uppercase tracking-wider">
-                    Opening Hours
-                  </h4>
-                  <p className="text-xs text-[#6E5548] mt-0.5">
-                    Mon – Fri: 07:00 AM – 10:00 PM <br />
-                    Sat – Sun: 08:00 AM – 11:00 PM
-                  </p>
-                </div>
-              </div>
-
+              {/* Email */}
               <div className="flex items-start gap-3.5">
                 <div className="w-9 h-9 rounded-full bg-[#543323] text-[#EEDBCA] flex items-center justify-center shrink-0 mt-0.5">
                   <Mail className="w-4 h-4" />
@@ -116,11 +110,51 @@ export default function ContactSection() {
                   <h4 className="text-xs font-bold text-[#2C1810] uppercase tracking-wider">
                     Email Inquiries
                   </h4>
-                  <p className="text-xs text-[#6E5548] mt-0.5">
-                    hello@moodcafe.com / kathalu@coffee.com
-                  </p>
+                  <a
+                    href={`mailto:${CAFE_INFO.email}`}
+                    className="text-xs text-[#6E5548] mt-1 block hover:text-[#2C1810] underline"
+                  >
+                    {CAFE_INFO.email}
+                  </a>
                 </div>
               </div>
+
+              {/* Business Hours Detailed */}
+              <div className="flex items-start gap-3.5">
+                <div className="w-9 h-9 rounded-full bg-[#543323] text-[#EEDBCA] flex items-center justify-center shrink-0 mt-0.5">
+                  <Clock className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-[#2C1810] uppercase tracking-wider">
+                    Business Hours (Open Daily)
+                  </h4>
+                  <div className="text-xs text-[#6E5548] mt-1 space-y-0.5">
+                    <p>Monday to Friday: <strong className="text-[#2C1810]">7:00 AM – 10:00 PM</strong></p>
+                    <p>Saturday: <strong className="text-[#2C1810]">7:00 AM – 10:00 PM</strong></p>
+                    <p>Sunday: <strong className="text-[#2C1810]">7:00 AM – 10:00 PM</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Actions */}
+            <div className="mt-8 pt-6 border-t border-[#E8D6C4] flex flex-col gap-2.5">
+              <a
+                href={`tel:${CAFE_INFO.phone}`}
+                className="w-full py-2.5 rounded-full bg-[#543323] text-white text-xs font-bold uppercase tracking-wider text-center hover:bg-[#3D2314] transition-all flex items-center justify-center gap-2"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span>Call Now (+91 {CAFE_INFO.phone})</span>
+              </a>
+              <a
+                href={`https://wa.me/91${CAFE_INFO.phone}?text=Hi%20Coffee%20Kathalu,%20I%20would%20like%20to%20place%20an%20order`}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full py-2.5 rounded-full bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider text-center hover:bg-emerald-800 transition-all flex items-center justify-center gap-2"
+              >
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>Order on WhatsApp</span>
+              </a>
             </div>
           </div>
 
@@ -135,7 +169,7 @@ export default function ContactSection() {
                   Thank You, {formData.fullName}!
                 </h3>
                 <p className="text-sm text-[#6E5548] max-w-md mx-auto mb-6">
-                  We have received your message. Our cafe host will get in touch with you at{' '}
+                  We have received your message. The Coffee Kathalu team will get in touch with you at{' '}
                   <span className="font-semibold text-[#2C1810]">{formData.contactInfo}</span> shortly.
                 </p>
                 <button
@@ -192,7 +226,7 @@ export default function ContactSection() {
                   <input
                     type="text"
                     required
-                    placeholder="John smith"
+                    placeholder="Enter your name"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-[#FBF7F2] border border-[#E8D6C4] text-sm text-[#2C1810] placeholder-[#A89080] focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
@@ -207,7 +241,7 @@ export default function ContactSection() {
                   <input
                     type="text"
                     required
-                    placeholder="Enter your email or number"
+                    placeholder="Enter your mobile number or email"
                     value={formData.contactInfo}
                     onChange={(e) => setFormData({ ...formData, contactInfo: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-[#FBF7F2] border border-[#E8D6C4] text-sm text-[#2C1810] placeholder-[#A89080] focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
@@ -230,18 +264,19 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <label className="block text-[11px] font-bold uppercase text-[#3D2314] mb-1">
-                        Time Slot
+                        Time Slot (7am - 10pm)
                       </label>
                       <select
                         value={formData.time}
                         onChange={(e) => setFormData({ ...formData, time: e.target.value })}
                         className="w-full px-3 py-2 rounded-xl bg-[#FBF7F2] border border-[#E8D6C4] text-xs text-[#2C1810] focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
                       >
-                        <option>Morning 09:00 AM</option>
-                        <option>Brunch 11:30 AM</option>
-                        <option>Afternoon 02:00 PM</option>
-                        <option>Evening 05:30 PM</option>
-                        <option>Dinner 08:00 PM</option>
+                        <option>Morning 07:30 AM</option>
+                        <option>Morning 09:30 AM</option>
+                        <option>Noon 12:30 PM</option>
+                        <option>Evening 04:30 PM</option>
+                        <option>Evening 06:30 PM</option>
+                        <option>Night 08:30 PM</option>
                       </select>
                     </div>
                     <div>
@@ -254,10 +289,10 @@ export default function ContactSection() {
                         className="w-full px-3 py-2 rounded-xl bg-[#FBF7F2] border border-[#E8D6C4] text-xs text-[#2C1810] focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
                       >
                         <option>1 Person</option>
-                        <option>2 Guests</option>
-                        <option>3 - 4 Guests</option>
-                        <option>5 - 8 Guests</option>
-                        <option>Private Event (10+)</option>
+                        <option>2 Friends</option>
+                        <option>3 - 4 Group</option>
+                        <option>5 - 8 Family</option>
+                        <option>Birthday / Party (10+)</option>
                       </select>
                     </div>
                   </div>
@@ -270,7 +305,7 @@ export default function ContactSection() {
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Tell us what you would like to know, or special dietary notes..."
+                    placeholder="Tell us what you would like to know, or special requests..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-[#FBF7F2] border border-[#E8D6C4] text-sm text-[#2C1810] placeholder-[#A89080] focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
