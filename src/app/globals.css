@@ -2,16 +2,17 @@
 
 @layer base {
   :root {
-    --cafe-bg: #FBF7F2;
-    --cafe-cream: #F5EBE1;
-    --cafe-beige: #EEDBCA;
+    --cafe-bg: #FAF6F0;
+    --cafe-cream: #F5ECE1;
+    --cafe-beige: #EBDCCB;
     --cafe-tan: #D9BEA7;
     --cafe-caramel: #C27A45;
     --cafe-amber: #D89255;
-    --cafe-brown: #543323;
-    --cafe-espresso: #2C1810;
-    --cafe-dark: #1A0D08;
-    --cafe-border: #E8D6C4;
+    --cafe-gold: #E5A967;
+    --cafe-brown: #4A2818;
+    --cafe-espresso: #24130B;
+    --cafe-dark: #120905;
+    --cafe-border: #E8D8C8;
   }
 
   html {
@@ -26,29 +27,52 @@
     overflow-x: hidden;
   }
 
-  /* Custom scrollbar */
+  /* Custom modern sleek scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #F5EBE1;
+    background: #F5ECE1;
   }
   ::-webkit-scrollbar-thumb {
     background: #C27A45;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #543323;
+    background: #4A2818;
   }
 }
 
-/* Floating animation for coffee beans and coffee splash */
+/* Modern Glassmorphism & Shadow Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(232, 216, 200, 0.7);
+}
+
+.glass-panel-dark {
+  background: rgba(26, 15, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(216, 146, 85, 0.2);
+}
+
+.shadow-cafe {
+  box-shadow: 0 10px 30px -10px rgba(74, 40, 24, 0.08), 0 4px 12px -4px rgba(74, 40, 24, 0.04);
+}
+
+.shadow-cafe-hover {
+  box-shadow: 0 20px 40px -12px rgba(74, 40, 24, 0.16), 0 8px 16px -6px rgba(74, 40, 24, 0.06);
+}
+
+/* Floating animation */
 @keyframes floatGentle {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px) rotate(3deg);
+    transform: translateY(-8px) rotate(2deg);
   }
 }
 
@@ -58,8 +82,8 @@
     transform: translateY(0) scaleX(1);
   }
   50% {
-    opacity: 0.6;
-    transform: translateY(-14px) scaleX(1.1);
+    opacity: 0.7;
+    transform: translateY(-14px) scaleX(1.15);
   }
   100% {
     opacity: 0;
@@ -67,14 +91,29 @@
   }
 }
 
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
 .animate-float-gentle {
-  animation: floatGentle 4.5s ease-in-out infinite;
+  animation: floatGentle 5s ease-in-out infinite;
 }
 
 .animate-float-delayed {
-  animation: floatGentle 5.5s ease-in-out 1.5s infinite;
+  animation: floatGentle 6s ease-in-out 2s infinite;
 }
 
 .animate-steam {
-  animation: steamRise 3s ease-out infinite;
+  animation: steamRise 3.2s ease-out infinite;
+}
+
+.animate-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
 }

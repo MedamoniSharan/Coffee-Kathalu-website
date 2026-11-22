@@ -14,53 +14,66 @@ import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
 import SignInModal from '@/components/SignInModal';
 import ReservationModal from '@/components/ReservationModal';
+import FranchiseModal from '@/components/FranchiseModal';
+import FloatingCartBar from '@/components/FloatingCartBar';
 import ToastNotification from '@/components/ToastNotification';
 
 export default function Home() {
   const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const [isFranchiseOpen, setIsFranchiseOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FBF7F2]">
-      {/* Navigation Bar */}
-      <Navbar onOpenSignIn={() => setIsSignInOpen(true)} />
+    <div className="min-h-screen flex flex-col bg-[#FAF6F0]">
+      {/* Navigation Bar with Franchise & Sign In Trigger */}
+      <Navbar
+        onOpenSignIn={() => setIsSignInOpen(true)}
+        onOpenFranchise={() => setIsFranchiseOpen(true)}
+      />
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* 1. Hero Section: "A Coffee Ritual for Every Mood" */}
+        {/* 1. Hero Section: "Every Cup Has A Story... / ప్రతి కప్పుది ఓ కథే..." */}
         <HeroSection />
 
         {/* 2. Special Offers: "ENJOY THE NEW SALE OFFERS" */}
         <SpecialOffers />
 
-        {/* 3. Our Menu: Coffee Menu & Food Menu */}
+        {/* 3. Our Menu: Coffee, Tea, Snacks, Shakes, Juices, Fast Food, Biryani */}
         <MenuSection />
 
-        {/* 4. Today's Special: "Coffee Time" (Dark Ambient 50% Discount Showcase) */}
+        {/* 4. Today's Special: "Coffee Time" (Dark Luxury 50% Showcase) */}
         <TodaysSpecial />
 
-        {/* 5. Store Gallery: Cafe Atmosphere & Roasting Art */}
+        {/* 5. Store Gallery: Cafe Atmosphere & Regenerated Storefront */}
         <StoreGallery />
 
-        {/* 6. About Us: Dedicated Baristas & Single-Origin Craft */}
+        {/* 6. About Us: Physical Storefront in Rangashaipet & The Story of Kathalu */}
         <AboutSection />
 
         {/* 7. Testimonials: "What Our Customers Say" */}
         <TestimonialsSection />
 
-        {/* 8. Contact & Reservations: Form and Roastery Location */}
+        {/* 8. Contact & Reservations: Form, Location, WhatsApp & Direct Call */}
         <ContactSection />
       </main>
 
-      {/* Footer */}
+      {/* Modern Luxury Dark Footer */}
       <Footer />
 
       {/* Slide-out Cart Tray Drawer */}
       <CartDrawer />
 
+      {/* Floating Bottom Quick Tray Bar with instant WhatsApp ordering */}
+      <FloatingCartBar />
+
       {/* Modals & Feedback Notifications */}
       <SignInModal
         isOpen={isSignInOpen}
         onClose={() => setIsSignInOpen(false)}
+      />
+      <FranchiseModal
+        isOpen={isFranchiseOpen}
+        onClose={() => setIsFranchiseOpen(false)}
       />
       <ReservationModal />
       <ToastNotification />

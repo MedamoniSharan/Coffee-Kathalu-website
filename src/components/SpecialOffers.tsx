@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import confetti from 'canvas-confetti';
-import { Sparkles, ShoppingBag, Check } from 'lucide-react';
+import { Sparkles, ShoppingBag, Check, ArrowRight } from 'lucide-react';
 import { SPECIAL_OFFERS, MenuItem } from '@/data/coffeeData';
 import { useCart } from '@/context/CartContext';
 
@@ -11,17 +11,16 @@ export default function SpecialOffers() {
   const { addToCart, cart } = useCart();
 
   const handleAvail = (item: MenuItem, e: React.MouseEvent) => {
-    // Fire festive confetti
     const rect = (e.target as HTMLElement).getBoundingClientRect();
     const x = (rect.left + rect.width / 2) / window.innerWidth;
     const y = (rect.top + rect.height / 2) / window.innerHeight;
 
     try {
       confetti({
-        particleCount: 40,
-        spread: 60,
+        particleCount: 45,
+        spread: 65,
         origin: { x, y },
-        colors: ['#543323', '#C27A45', '#EEDBCA', '#D89255'],
+        colors: ['#4A2818', '#C27A45', '#EBDCCB', '#E5A967'],
       });
     } catch {
       // ignore
@@ -31,36 +30,26 @@ export default function SpecialOffers() {
   };
 
   return (
-    <section id="offers" className="py-20 bg-[#F5EBE1]/60 relative overflow-hidden">
-      {/* Coffee Splash Decor Accents */}
-      <div className="absolute -left-12 top-10 w-44 h-44 opacity-20 pointer-events-none select-none">
-        <svg viewBox="0 0 200 200" fill="#543323" className="w-full h-full">
-          <path d="M42.7,-62.9C55.9,-54.7,67.5,-44.1,72.6,-31C77.7,-17.8,76.3,-2.1,72.7,12.7C69.1,27.5,63.2,41.4,52.8,51.8C42.4,62.1,27.5,68.9,12.1,71.2C-3.4,73.4,-19.4,71.2,-34.2,64.3C-48.9,57.5,-62.4,46,-69.5,31.4C-76.7,16.8,-77.6,-0.9,-72.7,-16.4C-67.8,-32,-57.1,-45.3,-44.2,-53.7C-31.4,-62.1,-16.2,-65.7,-0.4,-65.2C15.4,-64.7,30.8,-60.1,42.7,-62.9Z" transform="translate(100 100)" />
-        </svg>
-      </div>
-
-      <div className="absolute -right-16 bottom-6 w-56 h-56 opacity-15 pointer-events-none select-none">
-        <svg viewBox="0 0 200 200" fill="#C27A45" className="w-full h-full">
-          <path d="M47.7,-67.2C61.4,-58.5,72.1,-44.9,76.4,-29.7C80.8,-14.5,78.8,2.3,73.3,17.7C67.8,33.1,58.7,47.1,46.2,56.7C33.6,66.3,17.7,71.6,1.4,69.7C-14.8,67.8,-28.8,58.7,-41.8,48.7C-54.8,38.7,-66.9,27.9,-71.4,14.3C-75.9,0.7,-72.8,-15.7,-64.8,-29C-56.7,-42.4,-43.8,-52.7,-30.1,-61.4C-16.4,-70.2,-2,-77.4,13.6,-76.3C29.2,-75.2,34.1,-75.9,47.7,-67.2Z" transform="translate(100 100)" />
-        </svg>
-      </div>
+    <section id="offers" className="py-24 bg-[#F5ECE1]/60 relative overflow-hidden">
+      {/* Decorative Warm Ambient Glow */}
+      <div className="absolute top-1/2 left-10 w-72 h-72 bg-amber-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header Matching Mockup */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EEDBCA] text-[#543323] text-xs font-bold uppercase tracking-wider mb-3">
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EBDCCB] text-[#4A2818] text-xs font-bold uppercase tracking-wider mb-3.5 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#C27A45]" />
-            Special Deals of the Day
+            Signature Daily Specials
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-[#2C1810] tracking-tight uppercase mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-[#24130B] tracking-tight uppercase mb-4">
             Enjoy The New Sale Offers
           </h2>
           <p className="text-sm sm:text-base text-[#6E5548] leading-relaxed">
-            Relish handcrafted cups of authentic filter kaapi, dum chai, loaded burgers, and creamy milkshakes with exclusive deals at Coffee Kathalu.
+            Handcrafted South Indian filter kaapi, slow-dum chai, thick chocolate shakes, and special handi dum biryani with exclusive daily savings.
           </p>
         </div>
 
-        {/* Offers Grid */}
+        {/* Offers Grid: Sleek Glass Modern Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {SPECIAL_OFFERS.slice(0, 4).map((item) => {
             const inCart = cart.some((c) => c.item.id === item.id);
@@ -68,66 +57,83 @@ export default function SpecialOffers() {
             return (
               <div
                 key={item.id}
-                className="bg-[#FBF7F2] rounded-3xl overflow-hidden border border-[#E8D6C4] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group hover:-translate-y-1.5"
+                className="bg-white rounded-3xl overflow-hidden border border-[#E8D8C8] shadow-cafe hover:shadow-cafe-hover transition-all duration-300 flex flex-col group hover:-translate-y-1.5"
               >
-                {/* Top Image */}
-                <div className="relative w-full aspect-[4/3] bg-[#EEDBCA]/40 overflow-hidden">
+                {/* Image Showcase */}
+                <div className="relative w-full aspect-[4/3] bg-[#EBDCCB]/30 overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-108 transition-transform duration-600"
                   />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                   {/* Discount Badge */}
-                  <div className="absolute top-3 right-3 bg-[#C27A45] text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md">
+                  <div className="absolute top-3 right-3 bg-[#C27A45] text-white text-[11px] font-black px-3 py-1 rounded-full shadow-md tracking-wider">
                     {item.discountBadge}
                   </div>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-5 flex-1 flex flex-col justify-between text-center">
+                <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-serif text-lg font-bold text-[#2C1810] mb-1 group-hover:text-[#A76B43] transition-colors">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#A76B43] block mb-1">
+                      {item.categoryLabel}
+                    </span>
+                    <h3 className="font-serif text-lg font-bold text-[#24130B] mb-2 group-hover:text-[#C27A45] transition-colors line-clamp-1">
                       {item.name}
                     </h3>
-                    <p className="text-xs font-bold text-[#8C6249] tracking-wide mb-2 uppercase">
-                      {item.categoryLabel} Special Offer
-                    </p>
-                    <p className="text-xs text-[#7A6153] line-clamp-2 mb-4 leading-relaxed">
+                    <p className="text-xs text-[#7A6153] line-clamp-2 mb-4 leading-relaxed font-normal">
                       {item.description}
                     </p>
+
+                    {/* Tasting notes */}
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {item.tastingNotes.slice(0, 2).map((note) => (
+                        <span
+                          key={note}
+                          className="text-[10px] px-2 py-0.5 rounded-md bg-[#FAF6F0] text-[#4A2818] border border-[#E8D8C8] font-medium"
+                        >
+                          {note}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
-                  {/* Price and Avail Button */}
-                  <div className="pt-2 border-t border-[#E8D6C4]/60 flex flex-col items-center">
-                    <div className="flex items-baseline gap-2 mb-3">
-                      <span className="font-serif text-2xl font-black text-[#2C1810]">
-                        ₹{item.price}
-                      </span>
-                      {item.originalPrice && (
-                        <span className="text-xs text-[#9E8373] line-through font-semibold">
-                          ₹{item.originalPrice}
+                  {/* Price & Avail Button */}
+                  <div className="pt-3 border-t border-[#E8D8C8]/60 flex items-center justify-between">
+                    <div>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="font-serif text-2xl font-black text-[#24130B]">
+                          ₹{item.price}
                         </span>
-                      )}
+                        {item.originalPrice && (
+                          <span className="text-xs text-[#9E8373] line-through font-medium">
+                            ₹{item.originalPrice}
+                          </span>
+                        )}
+                      </div>
                     </div>
 
                     <button
                       onClick={(e) => handleAvail(item, e)}
-                      className={`w-full py-2.5 px-6 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-sm ${
+                      className={`py-2 px-4 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 shadow-sm ${
                         inCart
-                          ? 'bg-[#3D2314] text-white hover:bg-[#2C1810]'
-                          : 'bg-[#543323] hover:bg-[#3D2314] text-white hover:shadow-md'
+                          ? 'bg-[#24130B] text-white hover:bg-[#120905]'
+                          : 'bg-[#4A2818] hover:bg-[#24130B] text-white hover:shadow-md'
                       } active:scale-95`}
                     >
                       {inCart ? (
                         <>
                           <Check className="w-3.5 h-3.5 text-emerald-400" />
-                          <span>Added (Add More)</span>
+                          <span>Added</span>
                         </>
                       ) : (
                         <>
                           <ShoppingBag className="w-3.5 h-3.5" />
-                          <span>Avail Now</span>
+                          <span>Avail</span>
                         </>
                       )}
                     </button>
@@ -136,6 +142,17 @@ export default function SpecialOffers() {
               </div>
             );
           })}
+        </div>
+
+        {/* Bottom Menu Trigger */}
+        <div className="mt-12 text-center">
+          <a
+            href="#menu"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#4A2818] hover:text-[#C27A45] transition-colors"
+          >
+            <span>Explore All 7 Services on Full Menu</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>
