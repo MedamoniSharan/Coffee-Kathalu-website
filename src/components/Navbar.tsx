@@ -36,26 +36,26 @@ export default function Navbar({ onOpenFranchise }: NavbarProps) {
   return (
     <>
       {/* Top Banner Ribbon */}
-      <div className="bg-[#120905] text-[#EBDCCB] py-2 px-4 text-[11px] font-semibold border-b border-[#362117] relative z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping inline-block" />
-            <span className="text-[#E5A967] tracking-wider uppercase font-bold text-[10px] sm:text-xs">
+      <div className="bg-[#120905] text-[#EBDCCB] py-1.5 sm:py-2 px-3 sm:px-4 text-[10px] sm:text-[11px] font-semibold border-b border-[#362117] relative z-50">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-1.5">
+          <div className="flex items-center gap-1.5 sm:gap-2 truncate">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-400 animate-ping inline-block shrink-0" />
+            <span className="text-[#E5A967] tracking-wider uppercase font-bold truncate">
               {CAFE_INFO.tagline}
             </span>
             <span className="hidden md:inline text-white/30">•</span>
-            <span className="hidden md:inline text-[#D9BEA7] text-xs">
+            <span className="hidden md:inline text-[#D9BEA7]">
               {CAFE_INFO.teluguTagline}
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center shrink-0">
             <button
               onClick={onOpenFranchise}
-              className="text-[#FAF6F0] hover:text-[#E5A967] transition-colors flex items-center gap-1.5 cursor-pointer text-[10px] sm:text-xs bg-[#24130B] px-2.5 py-0.5 rounded-full border border-[#4A2818]"
+              className="text-[#FAF6F0] hover:text-[#E5A967] transition-colors flex items-center gap-1 cursor-pointer text-[9px] sm:text-xs bg-[#24130B] px-2 sm:px-2.5 py-0.5 rounded-full border border-[#4A2818]"
             >
-              <Building2 className="w-3 h-3 text-[#D89255]" />
-              <span className="text-[#D89255] font-bold">FRANCHISE:</span>
+              <Building2 className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#D89255]" />
+              <span className="text-[#D89255] font-bold hidden xs:inline">FRANCHISE:</span>
               <span className="font-mono font-bold">{CAFE_INFO.franchisePhone}</span>
             </button>
           </div>
@@ -64,10 +64,10 @@ export default function Navbar({ onOpenFranchise }: NavbarProps) {
 
       {/* Floating Modern Header */}
       <header
-        className={`fixed top-[33px] left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-[28px] sm:top-[33px] left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'glass-panel shadow-cafe py-2.5'
-            : 'bg-[#FAF6F0]/90 backdrop-blur-md py-3.5 border-b border-[#E8D8C8]/60'
+            ? 'glass-panel shadow-cafe py-2 sm:py-2.5'
+            : 'bg-[#FAF6F0]/95 backdrop-blur-md py-2.5 sm:py-3.5 border-b border-[#E8D8C8]/60'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,8 +177,8 @@ export default function Navbar({ onOpenFranchise }: NavbarProps) {
 
         {/* Mobile Drawer Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden glass-panel border-b border-[#E8D8C8] px-6 py-5 shadow-2xl transition-all animate-fadeIn">
-            <div className="flex flex-col gap-3">
+          <div className="md:hidden glass-panel border-b border-[#E8D8C8] px-5 sm:px-6 py-4 sm:py-5 shadow-2xl transition-all animate-fadeIn max-h-[calc(100vh-70px)] overflow-y-auto">
+            <div className="flex flex-col gap-2.5">
               {navLinks.map((link) => (
                 <a
                   key={link.name}

@@ -47,47 +47,47 @@ export default function TodaysSpecial() {
           {/* Radial warm lighting glow */}
           <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-96 h-96 bg-[#C27A45]/20 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 px-8 py-14 sm:px-12 sm:py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="relative z-10 px-5 py-10 sm:px-12 sm:py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Column: Special Content */}
             <div className="lg:col-span-7 flex flex-col items-start">
               {/* Badge Header */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#3D2314]/80 border border-[#C27A45]/40 text-[#EEDBCA] text-xs font-bold uppercase tracking-wider mb-4">
-                <Flame className="w-4 h-4 text-[#D89255]" />
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#3D2314]/80 border border-[#C27A45]/40 text-[#EEDBCA] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
+                <Flame className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D89255]" />
                 <span>Today’s Special Brew</span>
               </div>
 
               {/* Title Matching Mockup: "Coffee Time" */}
-              <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#F5EBE1] tracking-tight leading-[1.05] mb-4">
+              <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#F5EBE1] tracking-tight leading-[1.05] mb-3 sm:mb-4">
                 Coffee Time
               </h2>
 
-              <p className="text-[#D9BEA7] text-base sm:text-lg max-w-lg mb-8 leading-relaxed">
+              <p className="text-[#D9BEA7] text-sm sm:text-lg max-w-lg mb-6 sm:mb-8 leading-relaxed">
                 Experience our authentic Chikmagalur single-estate Filter Kaapi, brewed fresh with rich frothy crown. Pair it with crispy french fries or a piping hot grilled sandwich.
               </p>
 
               {/* Countdown Timer */}
-              <div className="mb-8 flex items-center gap-3">
+              <div className="mb-6 sm:mb-8 flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-[#EEDBCA] uppercase tracking-wider">
                   <Clock className="w-4 h-4 text-[#D89255]" />
                   <span>Closing at 10:00 PM:</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="bg-[#2C1810]/90 border border-[#543323] px-3 py-1.5 rounded-xl text-center">
-                    <span className="font-mono text-base font-bold text-[#EEDBCA]">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <div className="bg-[#2C1810]/90 border border-[#543323] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-center">
+                    <span className="font-mono text-sm sm:text-base font-bold text-[#EEDBCA]">
                       {String(timeLeft.hours).padStart(2, '0')}
                     </span>
                     <span className="text-[9px] block text-[#9E8373] uppercase">hrs</span>
                   </div>
                   <span className="text-white/40 font-bold">:</span>
-                  <div className="bg-[#2C1810]/90 border border-[#543323] px-3 py-1.5 rounded-xl text-center">
-                    <span className="font-mono text-base font-bold text-[#EEDBCA]">
+                  <div className="bg-[#2C1810]/90 border border-[#543323] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-center">
+                    <span className="font-mono text-sm sm:text-base font-bold text-[#EEDBCA]">
                       {String(timeLeft.minutes).padStart(2, '0')}
                     </span>
                     <span className="text-[9px] block text-[#9E8373] uppercase">min</span>
                   </div>
                   <span className="text-white/40 font-bold">:</span>
-                  <div className="bg-[#2C1810]/90 border border-[#543323] px-3 py-1.5 rounded-xl text-center">
-                    <span className="font-mono text-base font-bold text-[#EEDBCA]">
+                  <div className="bg-[#2C1810]/90 border border-[#543323] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-center">
+                    <span className="font-mono text-sm sm:text-base font-bold text-[#EEDBCA]">
                       {String(timeLeft.seconds).padStart(2, '0')}
                     </span>
                     <span className="text-[9px] block text-[#9E8373] uppercase">sec</span>
@@ -96,7 +96,7 @@ export default function TodaysSpecial() {
               </div>
 
               {/* Order Special Button & Price */}
-              <div className="flex flex-wrap items-center gap-5">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 w-full sm:w-auto">
                 <div className="flex items-baseline gap-2">
                   <span className="font-serif text-3xl sm:text-4xl font-black text-[#F5EBE1]">
                     ₹{specialItem.price}
@@ -108,7 +108,7 @@ export default function TodaysSpecial() {
 
                 <button
                   onClick={() => addToCart(specialItem, 1, specialItem.priceOptions ? specialItem.priceOptions[0] : undefined)}
-                  className="px-8 py-4 rounded-full bg-[#C27A45] hover:bg-[#D89255] text-white text-xs font-bold tracking-wider uppercase transition-all duration-200 shadow-lg hover:shadow-orange-900/30 flex items-center gap-2 active:scale-95"
+                  className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#C27A45] hover:bg-[#D89255] text-white text-xs font-bold tracking-wider uppercase transition-all duration-200 shadow-lg hover:shadow-orange-900/30 flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
                 >
                   <span>Order Special Now</span>
                   <ArrowRight className="w-4 h-4" />
@@ -117,8 +117,8 @@ export default function TodaysSpecial() {
             </div>
 
             {/* Right Column: Hero Visual with 50% discount stamp */}
-            <div className="lg:col-span-5 relative flex justify-center">
-              <div className="relative w-full max-w-[340px] aspect-square rounded-3xl overflow-hidden shadow-2xl border-2 border-[#543323] group">
+            <div className="lg:col-span-5 relative flex justify-center w-full">
+              <div className="relative w-full max-w-[290px] sm:max-w-[340px] aspect-square rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-[#543323] group">
                 <Image
                   src="/todays-special-luxury.jpg"
                   alt="Today's Special: Coffee Time at Coffee Kathalu"

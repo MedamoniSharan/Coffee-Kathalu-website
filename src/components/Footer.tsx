@@ -12,7 +12,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#1C120C] text-[#F5EBE1] pt-16 pb-8 border-t border-[#362117]">
+    <footer className="bg-[#1C120C] text-[#F5EBE1] pt-12 sm:pt-16 pb-28 sm:pb-12 border-t border-[#362117]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Full Official Banner Logo in Footer */}
         <div className="mb-12 p-3 sm:p-4 rounded-3xl bg-black border border-[#3E2317] max-w-3xl mx-auto">

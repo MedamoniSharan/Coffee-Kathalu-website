@@ -51,12 +51,12 @@ export default function FloatingCartBar() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5 shrink-0">
           <a
             href={generateWhatsAppUrl()}
             target="_blank"
             rel="noreferrer"
-            className="px-3 sm:px-3.5 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold flex items-center gap-1 transition-all active:scale-95 shadow-sm"
+            className="px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold flex items-center gap-1 transition-all active:scale-95 shadow-sm"
             title="Send Order Directly on WhatsApp"
           >
             <MessageSquare className="w-3.5 h-3.5" />
@@ -65,10 +65,11 @@ export default function FloatingCartBar() {
 
           <button
             onClick={() => setIsCartOpen(true)}
-            className="px-4 py-2 rounded-full bg-[#FAF6F0] hover:bg-[#EBDCCB] text-[#24130B] text-xs font-bold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#FAF6F0] hover:bg-[#EBDCCB] text-[#24130B] text-xs font-bold flex items-center gap-1 sm:gap-1.5 transition-all active:scale-95 shadow-sm"
           >
-            <span>View Tray</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#C27A45]" />
+            <span className="sm:inline hidden">View</span>
+            <span>Tray</span>
+            <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C27A45]" />
           </button>
         </div>
       </div>

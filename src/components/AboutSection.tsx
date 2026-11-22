@@ -41,11 +41,11 @@ export default function AboutSection() {
             </div>
 
             {/* Floating Experience Badge */}
-            <div className="absolute -bottom-6 -right-4 sm:right-6 bg-[#2C1810] text-[#EEDBCA] px-5 py-3.5 rounded-2xl shadow-xl border border-[#D9BEA7]/30 flex items-center gap-3">
-              <Award className="w-6 h-6 text-[#D89255]" />
+            <div className="absolute bottom-2.5 right-2.5 sm:-bottom-6 sm:right-6 bg-[#2C1810]/95 backdrop-blur-md text-[#EEDBCA] px-3.5 sm:px-5 py-2 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-xl border border-[#D9BEA7]/30 flex items-center gap-2.5 sm:gap-3">
+              <Award className="w-5 h-5 sm:w-6 sm:h-6 text-[#D89255] shrink-0" />
               <div>
-                <p className="font-serif text-lg font-bold text-white leading-tight">7 AM – 10 PM</p>
-                <p className="text-[11px] text-[#A76B43]">Open Every Single Day</p>
+                <p className="font-serif text-sm sm:text-lg font-bold text-white leading-tight">7 AM – 10 PM</p>
+                <p className="text-[10px] sm:text-[11px] text-[#A76B43]">Open Every Single Day</p>
               </div>
             </div>
           </div>

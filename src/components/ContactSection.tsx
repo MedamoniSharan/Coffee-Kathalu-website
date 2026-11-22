@@ -55,9 +55,9 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start max-w-5xl mx-auto">
           {/* Cafe Visit & Info Side */}
-          <div className="lg:col-span-5 bg-[#F5EBE1] rounded-3xl p-8 border border-[#E8D6C4] shadow-sm">
+          <div className="lg:col-span-5 bg-[#F5EBE1] rounded-3xl p-5 sm:p-8 border border-[#E8D6C4] shadow-sm">
             <h3 className="font-serif text-2xl font-bold text-[#2C1810] mb-2">
               Coffee Kathalu
             </h3>
@@ -159,7 +159,7 @@ export default function ContactSection() {
           </div>
 
           {/* Form Side (Matching Mockup Fields: Full Name, Number or Email, Message, Submit) */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-[#E8D6C4] shadow-md">
+          <div className="lg:col-span-7 bg-white rounded-3xl p-5 sm:p-10 border border-[#E8D6C4] shadow-md">
             {submitted ? (
               <div className="py-12 text-center animate-fadeIn">
                 <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-4">

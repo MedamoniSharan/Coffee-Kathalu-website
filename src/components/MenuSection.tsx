@@ -74,33 +74,41 @@ export default function MenuSection() {
           </p>
         </div>
 
-        {/* Categories Tab Bar */}
-        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-2.5 mb-8">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-                selectedCategory === cat.id
-                  ? 'bg-[#4A2818] text-white shadow-md scale-105'
-                  : 'bg-white text-[#4A2818] hover:bg-[#F5ECE1] border border-[#E8D8C8]'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
+        {/* Categories Tab Bar: Smooth swipeable row on mobile, centered grid on desktop */}
+        <div className="relative mb-6 sm:mb-8">
+          <div className="flex sm:flex-wrap items-center overflow-x-auto no-scrollbar scroll-smooth gap-2 sm:gap-2.5 py-1 px-1 justify-start sm:justify-center -mx-4 sm:mx-0 px-4 sm:px-0">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setSelectedCategory(cat.id)}
+                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer shrink-0 ${
+                  selectedCategory === cat.id
+                    ? 'bg-[#4A2818] text-white shadow-md scale-105'
+                    : 'bg-white text-[#4A2818] hover:bg-[#F5ECE1] border border-[#E8D8C8]'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+          {/* Subtle mobile scroll indicator hint */}
+          <div className="sm:hidden text-center mt-1.5">
+            <span className="text-[10px] text-[#8C6249]/70 font-medium tracking-wide">
+              ← Swipe categories →
+            </span>
+          </div>
         </div>
 
         {/* Search Input Bar */}
-        <div className="max-w-md mx-auto mb-12">
+        <div className="max-w-md mx-auto mb-8 sm:mb-12">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-[#8C6249]" />
             <input
               type="text"
-              placeholder="Search Herbal Tea, Biryani, Wings, Pani Puri, Puff..."
+              placeholder="Search Herbal Tea, Biryani, Wings, Pani Puri..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white rounded-full text-xs text-[#24130B] placeholder-[#9E8373] border border-[#E8D8C8] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
+              className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-white rounded-full text-base sm:text-xs text-[#24130B] placeholder-[#9E8373] border border-[#E8D8C8] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
             />
           </div>
         </div>

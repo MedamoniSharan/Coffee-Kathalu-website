@@ -56,7 +56,7 @@ export default function ReservationModal() {
       />
 
       {/* Modal Dialog */}
-      <div className="relative w-full max-w-lg bg-[#FBF7F2] rounded-3xl shadow-2xl border border-[#E8D6C4] p-8 z-10 animate-fadeIn">
+      <div className="relative w-full max-w-lg bg-[#FBF7F2] rounded-3xl shadow-2xl border border-[#E8D6C4] p-5 sm:p-8 max-h-[92vh] overflow-y-auto z-10 animate-fadeIn">
         <button
           onClick={handleClose}
           className="absolute top-5 right-5 p-1.5 rounded-full text-[#7A6153] hover:bg-[#EEDBCA]/50 transition-colors"

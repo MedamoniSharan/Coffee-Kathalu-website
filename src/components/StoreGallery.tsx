@@ -71,7 +71,7 @@ export default function StoreGallery() {
           onClick={() => setSelectedImage(null)}
         >
           <div
-            className="relative max-w-4xl w-full max-h-[85vh] aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl border border-white/20"
+            className="relative max-w-4xl w-full max-h-[85vh] aspect-[4/3] sm:aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
