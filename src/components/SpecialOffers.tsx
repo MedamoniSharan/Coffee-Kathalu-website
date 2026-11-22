@@ -26,7 +26,7 @@ export default function SpecialOffers() {
       // ignore
     }
 
-    addToCart(item, 1, 'Regular');
+    addToCart(item, 1, item.priceOptions ? item.priceOptions[0] : undefined);
   };
 
   return (

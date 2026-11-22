@@ -1,20 +1,20 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { MenuItem } from '@/data/coffeeData';
+import { MenuItem, PriceOption } from '@/data/coffeeData';
 
 export interface CartItem {
   item: MenuItem;
   quantity: number;
-  size?: 'Regular' | 'Large';
-  milk?: string;
+  size?: string;
+  selectedOption?: PriceOption;
 }
 
 interface CartContextType {
   cart: CartItem[];
-  addToCart: (item: MenuItem, quantity?: number, size?: 'Regular' | 'Large', milk?: string) => void;
-  removeFromCart: (itemId: string) => void;
-  updateQuantity: (itemId: string, quantity: number) => void;
+  addToCart: (item: MenuItem, quantity?: number, selectedOption?: PriceOption) => void;
+  removeFromCart: (itemId: string, optionLabel?: string) => void;
+  updateQuantity: (itemId: string, quantity: number, optionLabel?: string) => void;
   clearCart: () => void;
   totalItems: number;
   subtotal: number;
@@ -71,35 +71,51 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const addToCart = (
     item: MenuItem,
     quantity = 1,
-    size: 'Regular' | 'Large' = 'Regular',
-    milk = 'Oat Milk'
+    selectedOption?: PriceOption
   ) => {
+    const option = selectedOption || (item.priceOptions ? item.priceOptions[0] : undefined);
+    const optionLabel = option?.label;
+
     setCart((prev) => {
-      const existing = prev.find((ci) => ci.item.id === item.id && ci.size === size);
+      const existing = prev.find(
+        (ci) => ci.item.id === item.id && ci.selectedOption?.label === optionLabel
+      );
       if (existing) {
         return prev.map((ci) =>
-          ci.item.id === item.id && ci.size === size
+          ci.item.id === item.id && ci.selectedOption?.label === optionLabel
             ? { ...ci, quantity: ci.quantity + quantity }
             : ci
         );
       }
-      return [...prev, { item, quantity, size, milk }];
+      return [...prev, { item, quantity, selectedOption: option, size: optionLabel }];
     });
-    showToast(`Added ${item.name} to your tray!`);
+
+    const displayMsg = optionLabel
+      ? `Added ${item.name} (${optionLabel}) to tray!`
+      : `Added ${item.name} to tray!`;
+    showToast(displayMsg);
   };
 
-  const removeFromCart = (itemId: string) => {
-    setCart((prev) => prev.filter((ci) => ci.item.id !== itemId));
+  const removeFromCart = (itemId: string, optionLabel?: string) => {
+    setCart((prev) =>
+      prev.filter(
+        (ci) => !(ci.item.id === itemId && ci.selectedOption?.label === optionLabel)
+      )
+    );
     showToast('Item removed from tray');
   };
 
-  const updateQuantity = (itemId: string, quantity: number) => {
+  const updateQuantity = (itemId: string, quantity: number, optionLabel?: string) => {
     if (quantity <= 0) {
-      removeFromCart(itemId);
+      removeFromCart(itemId, optionLabel);
       return;
     }
     setCart((prev) =>
-      prev.map((ci) => (ci.item.id === itemId ? { ...ci, quantity } : ci))
+      prev.map((ci) =>
+        ci.item.id === itemId && ci.selectedOption?.label === optionLabel
+          ? { ...ci, quantity }
+          : ci
+      )
     );
   };
 
@@ -127,8 +143,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
   const subtotal = cart.reduce((acc, item) => {
-    const sizeMultiplier = item.size === 'Large' ? 1.25 : 1;
-    return acc + item.item.price * sizeMultiplier * item.quantity;
+    const unitPrice = item.selectedOption?.price ?? item.item.price;
+    return acc + unitPrice * item.quantity;
   }, 0);
   const discount = subtotal * discountPercent;
   const total = Math.max(0, subtotal - discount);

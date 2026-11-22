@@ -137,12 +137,12 @@ export default function CartDrawer() {
               {/* Cart Items List */}
               <div className="flex-1 overflow-y-auto p-6 space-y-4">
                 {cart.map((ci) => {
-                  const sizeMultiplier = ci.size === 'Large' ? 1.25 : 1;
-                  const itemPrice = ci.item.price * sizeMultiplier;
+                  const itemPrice = ci.selectedOption?.price ?? ci.item.price;
+                  const optionKey = `${ci.item.id}-${ci.selectedOption?.label || 'default'}`;
 
                   return (
                     <div
-                      key={`${ci.item.id}-${ci.size}`}
+                      key={optionKey}
                       className="bg-white rounded-2xl p-4 border border-[#E8D6C4] flex gap-3 shadow-sm"
                     >
                       {/* Thumbnail */}
@@ -163,14 +163,14 @@ export default function CartDrawer() {
                               {ci.item.name}
                             </h4>
                             <button
-                              onClick={() => removeFromCart(ci.item.id)}
+                              onClick={() => removeFromCart(ci.item.id, ci.selectedOption?.label)}
                               className="text-[#9E8373] hover:text-rose-600 transition-colors p-1"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
                             </button>
                           </div>
                           <p className="text-[11px] text-[#8C6249]">
-                            {ci.size} • {ci.item.categoryLabel}
+                            {ci.selectedOption ? ci.selectedOption.label : ci.item.categoryLabel}
                           </p>
                         </div>
 
@@ -181,7 +181,7 @@ export default function CartDrawer() {
 
                           <div className="flex items-center gap-2 bg-[#F5EBE1] rounded-full px-2 py-0.5 border border-[#E8D6C4]">
                             <button
-                              onClick={() => updateQuantity(ci.item.id, ci.quantity - 1)}
+                              onClick={() => updateQuantity(ci.item.id, ci.quantity - 1, ci.selectedOption?.label)}
                               className="p-1 text-[#543323] hover:text-[#2C1810]"
                             >
                               <Minus className="w-3 h-3" />
@@ -190,7 +190,7 @@ export default function CartDrawer() {
                               {ci.quantity}
                             </span>
                             <button
-                              onClick={() => updateQuantity(ci.item.id, ci.quantity + 1)}
+                              onClick={() => updateQuantity(ci.item.id, ci.quantity + 1, ci.selectedOption?.label)}
                               className="p-1 text-[#543323] hover:text-[#2C1810]"
                             >
                               <Plus className="w-3 h-3" />

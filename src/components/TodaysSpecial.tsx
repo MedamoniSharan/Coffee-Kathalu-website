@@ -8,7 +8,7 @@ import { MENU_ITEMS } from '@/data/coffeeData';
 
 export default function TodaysSpecial() {
   const { addToCart } = useCart();
-  const specialItem = MENU_ITEMS.find((m) => m.id === 'cof-1') || MENU_ITEMS[0];
+  const specialItem = MENU_ITEMS.find((m) => m.id === 'bev-2') || MENU_ITEMS[0];
 
   // Countdown timer to closing time
   const [timeLeft, setTimeLeft] = useState({ hours: 4, minutes: 28, seconds: 45 });
@@ -107,7 +107,7 @@ export default function TodaysSpecial() {
                 </div>
 
                 <button
-                  onClick={() => addToCart(specialItem, 1, 'Regular')}
+                  onClick={() => addToCart(specialItem, 1, specialItem.priceOptions ? specialItem.priceOptions[0] : undefined)}
                   className="px-8 py-4 rounded-full bg-[#C27A45] hover:bg-[#D89255] text-white text-xs font-bold tracking-wider uppercase transition-all duration-200 shadow-lg hover:shadow-orange-900/30 flex items-center gap-2 active:scale-95"
                 >
                   <span>Order Special Now</span>

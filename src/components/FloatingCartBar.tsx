@@ -13,7 +13,11 @@ export default function FloatingCartBar() {
   // Generate WhatsApp order message with items
   const generateWhatsAppUrl = () => {
     const itemList = cart
-      .map((ci) => `• ${ci.item.name} (${ci.size || 'Regular'}) x ${ci.quantity} = ₹${ci.item.price * ci.quantity}`)
+      .map((ci) => {
+        const unitPrice = ci.selectedOption?.price ?? ci.item.price;
+        const label = ci.selectedOption?.label || ci.size || 'Regular';
+        return `• ${ci.item.name} (${label}) x ${ci.quantity} = ₹${unitPrice * ci.quantity}`;
+      })
       .join('%0A');
 
     const msg = `*Order from Coffee Kathalu Website*%0A%0A${itemList}%0A%0A*Total: ₹${(total * 1.05).toFixed(0)}*%0A%0APlease confirm my order!`;

@@ -3,24 +3,27 @@
 import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { Search, Star, Plus, Minus, Coffee, Sparkles } from 'lucide-react';
-import { MENU_ITEMS } from '@/data/coffeeData';
+import { MENU_ITEMS, PriceOption, MenuItem } from '@/data/coffeeData';
 import { useCart } from '@/context/CartContext';
 
 export default function MenuSection() {
   const { addToCart, updateQuantity, cart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
+  // Local state to store selected price option per item
+  const [selectedOptions, setSelectedOptions] = useState<Record<string, PriceOption>>({});
 
-  // Matches exact items from logo banner: COFFEE | TEA | SNACKS | MILKSHAKES | JUICES | FAST FOOD | BIRYANI
   const categories = [
     { id: 'all', label: 'All Items' },
-    { id: 'coffee', label: 'Coffee' },
-    { id: 'tea', label: 'Tea' },
-    { id: 'snacks', label: 'Snacks' },
-    { id: 'milkshakes', label: 'Milkshakes' },
-    { id: 'juices', label: 'Juices' },
-    { id: 'fastfood', label: 'Fast Food' },
+    { id: 'herbal-tea', label: 'Herbal Teas' },
+    { id: 'tea-coffee', label: 'Tea & Coffee' },
     { id: 'biryani', label: 'Biryani' },
+    { id: 'starters', label: 'Starters & Manchuria' },
+    { id: 'fried-rice-noodles', label: 'Fried Rice & Noodles' },
+    { id: 'puffs-rolls', label: 'Puffs, Samosa & Rolls' },
+    { id: 'sandwiches-maggi', label: 'Sandwiches & Maggi' },
+    { id: 'snacks-panipuri', label: 'Pani Puri & Snacks' },
+    { id: 'shakes-juices', label: 'Shakes & Juices' },
   ];
 
   // Filter items
@@ -41,6 +44,19 @@ export default function MenuSection() {
     });
   }, [selectedCategory, searchQuery]);
 
+  const handleSelectOption = (itemId: string, opt: PriceOption) => {
+    setSelectedOptions((prev) => ({
+      ...prev,
+      [itemId]: opt,
+    }));
+  };
+
+  const getEffectiveOption = (item: MenuItem): PriceOption | undefined => {
+    if (selectedOptions[item.id]) return selectedOptions[item.id];
+    if (item.priceOptions && item.priceOptions.length > 0) return item.priceOptions[0];
+    return undefined;
+  };
+
   return (
     <section id="menu" className="py-24 bg-[#FAF6F0] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,13 +64,13 @@ export default function MenuSection() {
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EBDCCB] text-[#4A2818] text-xs font-bold uppercase tracking-wider mb-3.5 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#C27A45]" />
-            Complete Cafe Menu
+            Official Cafe Menu
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-[#24130B] tracking-tight uppercase mb-4">
-            Our Menu
+            Our Menu &amp; Specials
           </h2>
           <p className="text-sm sm:text-base text-[#6E5548] leading-relaxed">
-            From morning filter kaapi and clay-pot chai to evening snacks, loaded burgers, thick shakes, and fragrant handi dum biryani.
+            Herbal Flower Teas, Filter Kaapi, Handi Dum Biryani, Chicken Starters, Puffs, Rolls, Maggi, Fresh Pani Puri, and Thick Shakes.
           </p>
         </div>
 
@@ -81,7 +97,7 @@ export default function MenuSection() {
             <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-[#8C6249]" />
             <input
               type="text"
-              placeholder="Search Coffee, Chai, Biryani, Shakes, Burgers..."
+              placeholder="Search Herbal Tea, Biryani, Wings, Pani Puri, Puff..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-3 bg-white rounded-full text-xs text-[#24130B] placeholder-[#9E8373] border border-[#E8D8C8] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C27A45]"
@@ -94,12 +110,18 @@ export default function MenuSection() {
           <div className="text-center py-16 bg-white rounded-3xl border border-[#E8D8C8] max-w-md mx-auto shadow-sm">
             <Coffee className="w-10 h-10 text-[#C27A45] mx-auto mb-3" />
             <p className="text-[#24130B] font-bold mb-1">No items found</p>
-            <p className="text-xs text-[#8C6249]">Try searching for &quot;Kaapi&quot;, &quot;Biryani&quot;, &quot;Chai&quot;, or &quot;Shake&quot;</p>
+            <p className="text-xs text-[#8C6249]">Try searching for &quot;Biryani&quot;, &quot;Tea&quot;, &quot;Puff&quot;, or &quot;Pani Puri&quot;</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item) => {
-              const cartItem = cart.find((c) => c.item.id === item.id);
+              const currentOption = getEffectiveOption(item);
+              const currentPrice = currentOption ? currentOption.price : item.price;
+              const cartItem = cart.find(
+                (c) =>
+                  c.item.id === item.id &&
+                  c.selectedOption?.label === currentOption?.label
+              );
               const inCart = !!cartItem;
 
               return (
@@ -151,6 +173,34 @@ export default function MenuSection() {
                       {item.description}
                     </p>
 
+                    {/* Price Options / Portion Pills (e.g. Biryani Single / Regular / Medium / Family Pack) */}
+                    {item.priceOptions && item.priceOptions.length > 0 && (
+                      <div className="mb-3">
+                        <span className="text-[10px] font-bold uppercase text-[#8C6249] block mb-1.5">
+                          Portion / Serving:
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {item.priceOptions.map((opt) => {
+                            const isSelected = currentOption?.label === opt.label;
+                            return (
+                              <button
+                                key={opt.label}
+                                type="button"
+                                onClick={() => handleSelectOption(item.id, opt)}
+                                className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
+                                  isSelected
+                                    ? 'bg-[#4A2818] text-white shadow-sm'
+                                    : 'bg-[#F5ECE1] text-[#4A2818] hover:bg-[#EBDCCB]'
+                                }`}
+                              >
+                                {opt.label} <span className="opacity-90 font-mono">₹{opt.price}</span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+
                     {/* Tasting Notes Tags */}
                     <div className="flex flex-wrap gap-1.5 mb-4">
                       {item.tastingNotes.map((note) => (
@@ -167,17 +217,19 @@ export default function MenuSection() {
                   {/* Price and Add button */}
                   <div className="pt-3 border-t border-[#E8D8C8] flex items-center justify-between">
                     <div>
-                      <span className="text-[11px] text-[#8C6249] block">Price</span>
+                      <span className="text-[11px] text-[#8C6249] block">
+                        {currentOption ? currentOption.label : 'Price'}
+                      </span>
                       <span className="font-serif text-xl font-black text-[#24130B]">
-                        ₹{item.price}
+                        ₹{currentPrice}
                       </span>
                     </div>
 
                     {inCart ? (
-                      /* Interactive Quantity Stepper directly on card */
+                      /* Quantity Stepper directly on card for selected portion */
                       <div className="flex items-center gap-2 bg-[#F5ECE1] rounded-full px-3 py-1.5 border border-[#E8D8C8] shadow-sm">
                         <button
-                          onClick={() => updateQuantity(item.id, cartItem.quantity - 1)}
+                          onClick={() => updateQuantity(item.id, cartItem.quantity - 1, currentOption?.label)}
                           className="p-0.5 text-[#4A2818] hover:text-[#C27A45] cursor-pointer"
                           aria-label="Decrease quantity"
                         >
@@ -187,7 +239,7 @@ export default function MenuSection() {
                           {cartItem.quantity}
                         </span>
                         <button
-                          onClick={() => updateQuantity(item.id, cartItem.quantity + 1)}
+                          onClick={() => updateQuantity(item.id, cartItem.quantity + 1, currentOption?.label)}
                           className="p-0.5 text-[#4A2818] hover:text-[#C27A45] cursor-pointer"
                           aria-label="Increase quantity"
                         >
@@ -196,7 +248,7 @@ export default function MenuSection() {
                       </div>
                     ) : (
                       <button
-                        onClick={() => addToCart(item, 1, 'Regular')}
+                        onClick={() => addToCart(item, 1, currentOption)}
                         className="px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all duration-200 shadow-sm active:scale-95 bg-[#4A2818] hover:bg-[#24130B] text-white cursor-pointer"
                       >
                         <Plus className="w-3.5 h-3.5" />
