@@ -12,21 +12,18 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
-import SignInModal from '@/components/SignInModal';
 import ReservationModal from '@/components/ReservationModal';
 import FranchiseModal from '@/components/FranchiseModal';
 import FloatingCartBar from '@/components/FloatingCartBar';
 import ToastNotification from '@/components/ToastNotification';
 
 export default function Home() {
-  const [isSignInOpen, setIsSignInOpen] = useState(false);
   const [isFranchiseOpen, setIsFranchiseOpen] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF6F0]">
-      {/* Navigation Bar with Franchise & Sign In Trigger */}
+      {/* Navigation Bar with Franchise Trigger */}
       <Navbar
-        onOpenSignIn={() => setIsSignInOpen(true)}
         onOpenFranchise={() => setIsFranchiseOpen(true)}
       />
 
@@ -67,10 +64,6 @@ export default function Home() {
       <FloatingCartBar />
 
       {/* Modals & Feedback Notifications */}
-      <SignInModal
-        isOpen={isSignInOpen}
-        onClose={() => setIsSignInOpen(false)}
-      />
       <FranchiseModal
         isOpen={isFranchiseOpen}
         onClose={() => setIsFranchiseOpen(false)}

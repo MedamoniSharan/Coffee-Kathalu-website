@@ -8,11 +8,10 @@ import { useCart } from '@/context/CartContext';
 import { CAFE_INFO } from '@/data/coffeeData';
 
 interface NavbarProps {
-  onOpenSignIn: () => void;
   onOpenFranchise: () => void;
 }
 
-export default function Navbar({ onOpenSignIn, onOpenFranchise }: NavbarProps) {
+export default function Navbar({ onOpenFranchise }: NavbarProps) {
   const { totalItems, setIsCartOpen, setIsReservationOpen } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -123,7 +122,7 @@ export default function Navbar({ onOpenSignIn, onOpenFranchise }: NavbarProps) {
               {/* Table Reservation Button */}
               <button
                 onClick={() => setIsReservationOpen(true)}
-                className="text-xs font-bold tracking-wider uppercase text-[#4A2818] hover:text-white hover:bg-[#4A2818] px-3.5 py-2 rounded-full border border-[#4A2818]/60 transition-all flex items-center gap-1.5 active:scale-95 shadow-sm"
+                className="text-xs font-bold tracking-wider uppercase text-[#4A2818] hover:text-white hover:bg-[#4A2818] px-4 py-2 rounded-full border border-[#4A2818]/60 transition-all flex items-center gap-1.5 active:scale-95 shadow-sm cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#C27A45]" />
                 Book Table
@@ -133,7 +132,7 @@ export default function Navbar({ onOpenSignIn, onOpenFranchise }: NavbarProps) {
               <button
                 onClick={() => setIsCartOpen(true)}
                 aria-label="Open Tray"
-                className="relative p-2.5 rounded-full text-[#24130B] hover:bg-[#EBDCCB]/60 transition-colors"
+                className="relative p-2.5 rounded-full text-[#24130B] hover:bg-[#EBDCCB]/60 transition-colors cursor-pointer"
               >
                 <ShoppingBag className="w-5 h-5" />
                 {totalItems > 0 && (
@@ -141,14 +140,6 @@ export default function Navbar({ onOpenSignIn, onOpenFranchise }: NavbarProps) {
                     {totalItems}
                   </span>
                 )}
-              </button>
-
-              {/* Sign In Button */}
-              <button
-                onClick={onOpenSignIn}
-                className="px-5 py-2 rounded-full bg-[#4A2818] hover:bg-[#24130B] text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
-              >
-                Sign In
               </button>
             </div>
 
@@ -225,15 +216,6 @@ export default function Navbar({ onOpenSignIn, onOpenFranchise }: NavbarProps) {
                 >
                   <Sparkles className="w-4 h-4 text-[#C27A45]" />
                   Book Table Reservation
-                </button>
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenSignIn();
-                  }}
-                  className="w-full py-2.5 rounded-full bg-[#4A2818] text-white text-xs font-bold uppercase tracking-wider shadow"
-                >
-                  Sign In
                 </button>
               </div>
             </div>
