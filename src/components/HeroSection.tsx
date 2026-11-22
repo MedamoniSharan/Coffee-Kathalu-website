@@ -1,13 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { ArrowRight, Coffee, Clock, Phone, Sparkles, Flame, CheckCircle2, MessageSquare } from 'lucide-react';
+import { ArrowRight, Coffee, Clock, Phone, Sparkles, Flame, CheckCircle2, MessageSquare, Store } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { SPECIAL_OFFERS, CAFE_INFO } from '@/data/coffeeData';
 
 export default function HeroSection() {
   const { addToCart, setIsReservationOpen } = useCart();
+  const [activeVisual, setActiveVisual] = useState<'ritual' | 'store'>('ritual');
   const featuredOffer = SPECIAL_OFFERS[0]; // Filter Kaapi
 
   return (
@@ -139,16 +140,46 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column: Layered Storefront + Kaapi Visual Showcase */}
-          <div className="lg:col-span-5 relative flex justify-center items-center">
+          <div className="lg:col-span-5 relative flex flex-col justify-center items-center">
+            {/* Visual Selector Pills */}
+            <div className="flex items-center gap-2 mb-4 bg-white/80 backdrop-blur-md p-1 rounded-full border border-[#E8D8C8] shadow-sm z-30">
+              <button
+                onClick={() => setActiveVisual('ritual')}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                  activeVisual === 'ritual'
+                    ? 'bg-[#4A2818] text-white shadow'
+                    : 'text-[#6E5548] hover:text-[#24130B]'
+                }`}
+              >
+                <Coffee className="w-3.5 h-3.5 text-[#E5A967]" />
+                <span>Coffee Ritual</span>
+              </button>
+              <button
+                onClick={() => setActiveVisual('store')}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                  activeVisual === 'store'
+                    ? 'bg-[#4A2818] text-white shadow'
+                    : 'text-[#6E5548] hover:text-[#24130B]'
+                }`}
+              >
+                <Store className="w-3.5 h-3.5 text-[#E5A967]" />
+                <span>Warangal Store</span>
+              </button>
+            </div>
+
             <div className="relative w-full max-w-[430px] aspect-square flex items-center justify-center">
               {/* Outer Decorative Radial Halo */}
               <div className="absolute inset-0 rounded-full border border-[#D9BEA7]/50 bg-gradient-to-tr from-[#F5ECE1] to-[#EBDCCB]/60 shadow-inner" />
 
-              {/* Main Visual: Storefront Architecture */}
-              <div className="relative z-20 w-[84%] h-[84%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+              {/* Main Visual Display */}
+              <div className="relative z-20 w-[86%] h-[86%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
                 <Image
-                  src={CAFE_INFO.storefrontImage}
-                  alt="Coffee Kathalu Modern Cafe Storefront"
+                  src={activeVisual === 'ritual' ? '/hero-coffee-splash.jpg' : CAFE_INFO.storefrontImage}
+                  alt={
+                    activeVisual === 'ritual'
+                      ? 'Coffee Kathalu Signature Coffee Ritual 3D Splash'
+                      : 'Coffee Kathalu Modern Cafe Storefront'
+                  }
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -164,8 +195,12 @@ export default function HeroSection() {
                       <Coffee className="w-4 h-4 text-[#E5A967]" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-[#24130B]">Special Filter Kaapi</p>
-                      <p className="text-[11px] text-[#8C6249] font-medium">Fresh Froth • ₹40</p>
+                      <p className="text-xs font-bold text-[#24130B]">
+                        {activeVisual === 'ritual' ? 'Signature Kaapi & Brews' : 'Rangashaipet Sanctuary'}
+                      </p>
+                      <p className="text-[11px] text-[#8C6249] font-medium">
+                        {activeVisual === 'ritual' ? 'Artisan Roast • ₹40' : 'Warangal - 506005'}
+                      </p>
                     </div>
                   </div>
                   <button
@@ -180,7 +215,9 @@ export default function HeroSection() {
               {/* Floating Top Badge */}
               <div className="absolute -top-3 -right-2 z-30 bg-[#24130B] text-[#FAF6F0] px-4 py-2 rounded-2xl shadow-xl border border-[#D89255]/40 flex items-center gap-2 animate-float-gentle">
                 <Flame className="w-4 h-4 text-[#E5A967]" />
-                <span className="text-xs font-bold tracking-wide">Rangashaipet Hub</span>
+                <span className="text-xs font-bold tracking-wide">
+                  {activeVisual === 'ritual' ? 'Chikmagalur Roast' : 'Rangashaipet Hub'}
+                </span>
               </div>
 
               {/* Floating Bottom Badge */}

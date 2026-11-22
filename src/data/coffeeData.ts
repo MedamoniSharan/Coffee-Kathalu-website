@@ -107,7 +107,7 @@ export const SPECIAL_OFFERS: MenuItem[] = [
     reviewCount: 740,
     description: 'Slow dum-cooked basmati rice spiced with cloves, cinnamon, saffron, and succulent marinated chicken.',
     tastingNotes: ['Hyderabadi Spices', 'Tender Chicken', 'Mirchi Ka Salan'],
-    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1200&q=90',
     isOffer: true,
   },
   {
@@ -122,7 +122,7 @@ export const SPECIAL_OFFERS: MenuItem[] = [
     reviewCount: 520,
     description: 'Traditional Chikmagalur plantation roast decoction frothed high with creamy farm milk in brass davarah.',
     tastingNotes: ['Plantation Arabica', 'Chicory Froth', 'Caramel Aroma'],
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=90',
     isOffer: true,
   },
   {
@@ -137,7 +137,7 @@ export const SPECIAL_OFFERS: MenuItem[] = [
     reviewCount: 310,
     description: 'Vibrant indigo blue wellness infusion of pure dried butterfly pea blossoms with natural antioxidants.',
     tastingNotes: ['Earth Floral', 'Natural Indigo', 'Antioxidant Brew'],
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=90',
     isOffer: true,
   },
   {
@@ -157,7 +157,7 @@ export const SPECIAL_OFFERS: MenuItem[] = [
     reviewCount: 410,
     description: 'Golden fried chicken wings glazed with tangy spiced masala sauce and sprinkled with fresh herbs.',
     tastingNotes: ['Crispy Skin', 'Juicy Inside', 'Tangy Masala'],
-    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=1200&q=90',
     isOffer: true,
   },
 ];
@@ -174,7 +174,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 180,
     description: 'Specially crafted wellness floral infusion promoting balance, calm, and vital rejuvenation.',
     tastingNotes: ['Floral Sweet', 'Herbal Harmony', 'Caffeine Free'],
-    image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -187,7 +187,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 165,
     description: 'Invigorating herbal blend with adaptogenic botanical herbs designed for sustained stamina and focus.',
     tastingNotes: ['Earthy Spice', 'Warm Botanicals', 'Natural Energy'],
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -200,7 +200,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 320,
     description: 'Mesmerizing indigo-blue flower tisane rich in proanthocyanidins. Turns purple with a dash of lemon!',
     tastingNotes: ['Earth Floral', 'Vibrant Blue', 'Antioxidants'],
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -213,7 +213,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 240,
     description: 'Ruby red tart and tangy herbal brew known to support cardiovascular wellness and digestion.',
     tastingNotes: ['Cranberry Tart', 'Ruby Floral', 'Vitamin C'],
-    image: 'https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'herb-5',
@@ -225,7 +225,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 290,
     description: 'Delicate sun-dried chamomile blossoms with honeyed apple aromas for gentle evening relaxation.',
     tastingNotes: ['Crisp Apple', 'Honey Bloom', 'Soothing Rest'],
-    image: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'herb-6',
@@ -237,7 +237,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 210,
     description: 'Fragrant pink Damask rose petals brewed into a delicate floral elixir for glowing skin and calm.',
     tastingNotes: ['Sweet Damask Rose', 'Subtle Perfume', 'Hydrating'],
-    image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'herb-7',
@@ -249,7 +249,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 195,
     description: 'Aromatic whole jasmine blossoms layered for an ethereal, mood-elevating fragrance in every sip.',
     tastingNotes: ['Sweet Jasmine', 'Light Blossom', 'Uplifting'],
-    image: 'https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'herb-8',
@@ -261,7 +261,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 230,
     description: 'French culinary lavender buds steeped to provide deep mental tranquility and de-stressing comfort.',
     tastingNotes: ['Lavender Herb', 'Gentle Mint', 'Stress Relief'],
-    image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'herb-9',
@@ -273,7 +273,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 140,
     description: 'Golden calendula flower tisane celebrated for skin radiance and natural anti-inflammatory benefits.',
     tastingNotes: ['Golden Marigold', 'Warm Earth', 'Gentle Tonic'],
-    image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'herb-10',
@@ -285,7 +285,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 120,
     description: 'Exotic purple globe amaranth blossoms packed with essential phytochemicals for wellness and vitality.',
     tastingNotes: ['Purple Bloom', 'Mellow Earth', 'Clean Finish'],
-    image: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=1200&q=90',
   },
 
   // 2. TEA & COFFEE
@@ -299,7 +299,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 890,
     description: 'Slow dum-brewed rich milk tea made in clay pot with cardamom and ginger infusion.',
     tastingNotes: ['Cardamom', 'Creamy Malai', 'Strong CTC'],
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -312,7 +312,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 780,
     description: 'Authentic decoction coffee frothed high with creamy farm milk in traditional brass davarah.',
     tastingNotes: ['Chicory Blend', 'Dense Froth', 'Caramel Aroma'],
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -325,7 +325,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 460,
     description: 'Hand-crushed adrak and elaichi simmered with premium tea leaves for an energizing kick.',
     tastingNotes: ['Zesty Ginger', 'Sweet Cardamom', 'Invigorating'],
-    image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'bev-4',
@@ -337,7 +337,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 220,
     description: 'Whole leaf Darjeeling green tea paired with raw forest honey and freshly squeezed lime.',
     tastingNotes: ['Raw Honey', 'Citrus Lime', 'Green Tea Leaf'],
-    image: 'https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'bev-5',
@@ -349,7 +349,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 380,
     description: 'Chilled espresso blended with roasted hazelnut syrup, whole milk, and vanilla ice cream scoop.',
     tastingNotes: ['Roasted Hazelnut', 'Cold Espresso', 'Sweet Cream'],
-    image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1200&q=90',
   },
 
   // 3. BIRYANI
@@ -369,7 +369,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 920,
     description: 'Traditional slow dum handi basmati rice with marinated chicken cuts, served with mirchi salan and raita.',
     tastingNotes: ['Dum Spices', 'Juicy Chicken', 'Saffron Rice'],
-    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -388,7 +388,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 650,
     description: 'Extra tender spiced chicken pieces layered over fragrant long-grain basmati with fried cashews & boiled egg.',
     tastingNotes: ['Roasted Cashews', 'Boiled Egg', 'Rich Masala'],
-    image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -407,7 +407,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 540,
     description: 'Crispy fried Chicken 65 tossed in curry leaves & green chilies, layered over hot aromatic biryani rice.',
     tastingNotes: ['Crispy Chicken 65', 'Curry Leaves', 'Fiery Spice'],
-    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'bir-4',
@@ -425,7 +425,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 310,
     description: 'Golden shallow-fried boiled eggs in spiced onion-tomato gravy, baked with fragrant basmati dum rice.',
     tastingNotes: ['Fried Boiled Eggs', 'Onion Masala', 'Basmati Rice'],
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'bir-5',
@@ -443,7 +443,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 380,
     description: 'Carrots, beans, peas, and potatoes simmered in mint-coriander biryani masala with basmati rice.',
     tastingNotes: ['Fresh Vegetables', 'Mint Aromas', 'Ghee Flavor'],
-    image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'bir-6',
@@ -461,7 +461,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 420,
     description: 'Rich royal biryani featuring roasted whole cashews and soft cottage cheese cubes cooked in dum style.',
     tastingNotes: ['Roasted Kaju', 'Soft Paneer', 'Royal Saffron'],
-    image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -480,7 +480,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 290,
     description: 'Marinated soft malai paneer cubes layered with aromatic rice, crispy brown onions, and mint leaves.',
     tastingNotes: ['Malai Paneer', 'Crispy Birista', 'Ghee Basmati'],
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1200&q=90',
   },
 
   // 4. PUFFS, SAMOSA & ROLLS
@@ -494,7 +494,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 450,
     description: 'Golden flaky layered puff pastry stuffed with spiced potato and vegetable curry.',
     tastingNotes: ['Flaky Butter Crust', 'Spiced Potato', 'Freshly Baked'],
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -507,7 +507,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 310,
     description: 'Crisp pastry shell loaded with flavorful spiced paneer bhurji and herbs.',
     tastingNotes: ['Cottage Cheese', 'Flaky Layers', 'Warm Spices'],
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'puf-3',
@@ -519,7 +519,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 340,
     description: 'Warm, crispy bakery puff filled with half-boiled spiced egg and caramelized onion masala.',
     tastingNotes: ['Spiced Egg', 'Golden Pastry', 'Onion Masala'],
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1619895092538-128341789043?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'puf-4',
@@ -531,7 +531,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 390,
     description: 'Jumbo flaky puff loaded with two spiced egg halves and roasted pepper curry.',
     tastingNotes: ['Double Egg', 'Extra Filling', 'Peppery Crust'],
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -544,7 +544,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 520,
     description: 'Flaky baked pastry packed with savory minced chicken keema and fragrant spices.',
     tastingNotes: ['Chicken Keema', 'Flaky Shell', 'Savory Herbs'],
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -557,7 +557,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 680,
     description: 'Four bite-sized crispy triangular samosas filled with savory spiced potatoes and peas.',
     tastingNotes: ['Crispy Crust', 'Cumin Potato', 'Green Chutney'],
-    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -570,7 +570,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 260,
     description: 'Crispy paratha wrap stuffed with sauteed vegetables, tangy sauces, and crunchy onion slaw.',
     tastingNotes: ['Crisp Wrap', 'Crunchy Veggies', 'Tangy Mint Sauce'],
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'rol-2',
@@ -582,7 +582,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 380,
     description: 'Freshly pan-fried egg paratha rolled with sliced onions, chaat masala, and spicy green chili.',
     tastingNotes: ['Pan Fried Egg', 'Chaat Masala', 'Flaky Paratha'],
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -595,7 +595,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 490,
     description: 'Juicy spiced chicken chunks grilled with peppers, wrapped in flaky egg paratha with secret sauce.',
     tastingNotes: ['Grilled Chicken', 'Secret Sauce', 'Egg Paratha'],
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
 
@@ -615,7 +615,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 510,
     description: 'Juicy chicken wings tossed in rich spicy glaze with garlic, peppers, and sesame seeds.',
     tastingNotes: ['Spicy Glaze', 'Crisp Skin', 'Juicy Wing'],
-    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -632,7 +632,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 620,
     description: 'Crispy frenched chicken drumettes fried golden, served with spicy Schezwan dipping sauce.',
     tastingNotes: ['Frenched Wing', 'Fiery Schezwan', 'Crispy Batter'],
-    image: 'https://images.unsplash.com/photo-1527477245898-e325db57b97f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1527477245898-e325db57b97f?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -650,7 +650,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 430,
     description: 'Boneless chicken marinated in ginger-garlic and gram flour batter, deep-fried with curry leaves.',
     tastingNotes: ['Curry Leaves', 'Crisp Besan', 'Spiced Chicken'],
-    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'str-4',
@@ -666,7 +666,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 480,
     description: 'Crispy fried chicken balls tossed in savory soy-garlic sauce with spring onions and green chilies.',
     tastingNotes: ['Indo-Chinese Garlic', 'Spring Onion', 'Tangy Glaze'],
-    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'str-5',
@@ -678,7 +678,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 590,
     description: 'Classic spicy South Indian deep-fried chicken tossed in yogurt, red chilies, and tempering of curry leaves.',
     tastingNotes: ['Fiery Red', 'Curry Leaf Aroma', 'Crunchy Bite'],
-    image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -691,7 +691,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 470,
     description: 'Wok-tossed chicken chunks with bell peppers, green chilies, and oriental dark soy sauce reduction.',
     tastingNotes: ['Capsicum Crunch', 'Dark Soy', 'Wok Hei'],
-    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'str-7',
@@ -707,7 +707,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 390,
     description: 'Crispy minced cabbage and carrot fritters tossed in ginger, garlic, and tangy Manchurian gravy.',
     tastingNotes: ['Crisp Fritters', 'Garlic Sauce', 'Spring Onion'],
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'str-8',
@@ -719,7 +719,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 350,
     description: 'Crunchy battered cauliflower florets deep-fried with spices, curry leaves, and green chilies.',
     tastingNotes: ['Crispy Cauliflower', 'Curry Leaves', 'Tangy Chutney'],
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'str-9',
@@ -731,7 +731,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 280,
     description: 'Crispy batter-coated egg dumplings sauteed in spicy and tangy Indo-Chinese Manchurian sauce.',
     tastingNotes: ['Egg Dumplings', 'Tangy Gravy', 'Chili Garlic'],
-    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1200&q=90',
   },
 
   // 6. FRIED RICE & NOODLES
@@ -745,7 +745,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 680,
     description: 'Wok-tossed rice with tender shredded chicken, scrambled eggs, carrots, and spring onions.',
     tastingNotes: ['Wok Aroma', 'Tender Chicken', 'Spring Onion'],
-    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -758,7 +758,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 420,
     description: 'Premium aged basmati rice tossed with juicy chicken bites, egg, ghee, and special chef spices.',
     tastingNotes: ['Aged Basmati', 'Pure Ghee', 'Special Chicken'],
-    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -771,7 +771,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 380,
     description: 'Fluffy rice tossed on high flame with farm fresh eggs, crunchy cabbage, and black pepper.',
     tastingNotes: ['Scrambled Egg', 'Black Pepper', 'Wok Tossed'],
-    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'fr-4',
@@ -783,7 +783,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 310,
     description: 'Classic wok-fried rice with finely diced carrots, french beans, cabbage, and soy seasonings.',
     tastingNotes: ['Fresh Veggies', 'Light Seasoning', 'Fluffy Rice'],
-    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'fr-5',
@@ -795,7 +795,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 220,
     description: 'Fragrant basmati rice tempered in desi ghee with roasted cumin seeds and fresh coriander.',
     tastingNotes: ['Roasted Cumin', 'Desi Ghee', 'Fragrant Basmati'],
-    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'fr-6',
@@ -807,7 +807,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 260,
     description: 'Cooling creamy yogurt rice tempered with mustard seeds, curry leaves, ginger, and pomegranate.',
     tastingNotes: ['Cooling Curd', 'Mustard Tadka', 'Pomegranate'],
-    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'ndl-1',
@@ -819,7 +819,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 540,
     description: 'Soft noodles wok-tossed with shredded spiced chicken, egg, bell peppers, and chili garlic sauce.',
     tastingNotes: ['Chili Garlic', 'Tender Chicken', 'Springy Noodles'],
-    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -832,7 +832,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 390,
     description: 'Hakka noodles cooked with golden scrambled eggs, julienned vegetables, and dark soy sauce.',
     tastingNotes: ['Savory Egg', 'Dark Soy', 'Crunchy Cabbage'],
-    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'ndl-3',
@@ -844,7 +844,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 320,
     description: 'Street-style wok tossed noodles with crisp carrots, bell peppers, cabbage, and oriental spices.',
     tastingNotes: ['Crisp Vegetables', 'Mild Spices', 'Street Style'],
-    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=1200&q=90',
   },
 
   // 7. SANDWICHES, MAGGI & OMELETTES
@@ -858,7 +858,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 290,
     description: 'Freshly toasted bread filled with cucumber, tomato, potato, green chutney, and sandwich masala.',
     tastingNotes: ['Mint Chutney', 'Fresh Salad', 'Toasted Bread'],
-    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'sw-2',
@@ -870,7 +870,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 420,
     description: 'Grilled jumbo bread layered with gooey mozzarella cheese, butter, and spiced vegetable mix.',
     tastingNotes: ['Melted Mozzarella', 'Golden Butter Crust', 'Herb Spices'],
-    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -883,7 +883,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 480,
     description: 'Shredded roasted chicken tossed in creamy mayo, herbs, and crispy vegetables in grilled toast.',
     tastingNotes: ['Roasted Chicken', 'Creamy Mayo', 'Grilled Toast'],
-    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -896,7 +896,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 370,
     description: 'The legendary instant noodles cooked steaming hot with classic Maggi tastemaker masala.',
     tastingNotes: ['Classic Masala', 'Steaming Broth', 'Comfort Food'],
-    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'mg-2',
@@ -908,7 +908,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 520,
     description: 'Piping hot Maggi noodles loaded with sweet corn, onions, tomatoes, and melted processed cheese.',
     tastingNotes: ['Melted Cheese', 'Sweet Corn', 'Rich Tastemaker'],
-    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -921,7 +921,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 430,
     description: 'Maggi noodles scrambled with double eggs, green chilies, and roasted coriander powder.',
     tastingNotes: ['Scrambled Egg', 'Green Chilies', 'Spicy Maggi'],
-    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'om-1',
@@ -933,7 +933,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 410,
     description: 'Double egg fluffy omelette folded neatly with toasted buttered bread slices, onions, and pepper.',
     tastingNotes: ['Fluffy Egg', 'Buttered Bread', 'Fresh Pepper'],
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -946,7 +946,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 380,
     description: 'Signature thick omelette stuffed with flavorful spiced chicken keema and green chilies.',
     tastingNotes: ['Spiced Keema', 'Golden Omelette', 'Savory Herbs'],
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
 
@@ -965,7 +965,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 820,
     description: 'Crispy hollow puris filled with spiced potato-chickpea ragda and tangy mint-coriander teekha pani.',
     tastingNotes: ['Tangy Mint Water', 'Crispy Puris', 'Spiced Ragda'],
-    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -982,7 +982,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 290,
     description: 'Golden shallow-fried vegetable patties spiced with beets, potatoes, and peas with tomato ketchup.',
     tastingNotes: ['Crispy Panko Crust', 'Beetroot Vegetable', 'Sweet Chutney'],
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'sn-3',
@@ -994,7 +994,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 460,
     description: 'Classic salted crispy golden potato fries, hot from the fryer, served with tomato ketchup.',
     tastingNotes: ['Crunchy Exterior', 'Soft Potato Center', 'Light Salt'],
-    image: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'sn-4',
@@ -1006,7 +1006,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 510,
     description: 'Crisp golden fries generously tossed with house chaat masala, red chili, and a dash of lemon juice.',
     tastingNotes: ['Tangy Chaat Masala', 'Fiery Chili', 'Crisp Fries'],
-    image: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
 
@@ -1021,7 +1021,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 420,
     description: 'Decadent imported Belgian cocoa blended with dairy soft-serve and dark chocolate chip fudge.',
     tastingNotes: ['Belgian Cocoa', 'Fudge Swirl', 'Velvety Cream'],
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=1200&q=90',
     isPopular: true,
   },
   {
@@ -1034,7 +1034,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 530,
     description: 'Crushed KitKat wafers blended into creamy dairy ice cream, crowned with wafer sticks.',
     tastingNotes: ['Wafer Crunch', 'Milk Chocolate', 'Creamy Frosting'],
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'shk-3',
@@ -1046,7 +1046,7 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 390,
     description: 'Muddled garden mint leaves, tangy lime wedges, chilled sparkling fizz, and brown sugar.',
     tastingNotes: ['Garden Mint', 'Zesty Lime', 'Crisp Sparkle'],
-    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'shk-4',
@@ -1058,46 +1058,46 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewCount: 280,
     description: 'Vibrant blue citrus syrup combined with crushed ice, lemon juice, and effervescent soda.',
     tastingNotes: ['Citrus Orange', 'Icy Refreshment', 'Sparkling Soda'],
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=90',
   },
 ];
 
 export const GALLERY_IMAGES = [
   {
     id: 'gal-store-1',
-    title: 'Coffee Kathalu Storefront & Outdoor Seating',
+    title: 'Coffee Kathalu Architectural Storefront',
     category: 'Storefront',
     url: '/coffee-kathalu-storefront.jpg',
   },
   {
     id: 'gal-store-2',
+    title: 'Signature 3D Coffee Ritual Splash',
+    category: 'Coffee Ritual',
+    url: '/hero-coffee-splash.jpg',
+  },
+  {
+    id: 'gal-store-3',
+    title: 'Today’s Special Dark Luxury Roast',
+    category: 'Specialty Brew',
+    url: '/todays-special-luxury.jpg',
+  },
+  {
+    id: 'gal-store-4',
     title: 'Illuminated 3D Signboard & Facade',
     category: 'Rangashaipet',
     url: '/store-signboard-clean.jpg',
   },
   {
-    id: 'gal-1',
-    title: 'Special Herbal Flower Teas',
-    category: 'Herbal Tea',
-    url: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
-  },
-  {
     id: 'gal-2',
     title: 'Handi Chicken Dum Biryani',
     category: 'Biryani',
-    url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
+    url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1200&q=90',
   },
   {
     id: 'gal-3',
-    title: 'Crispy Samosas & Baked Puffs',
-    category: 'Puffs & Samosa',
-    url: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'gal-4',
-    title: 'Chicken Lollipops & Wings',
-    category: 'Starters',
-    url: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80',
+    title: 'KitKat & Belgian Chocolate Thick Shakes',
+    category: 'Shakes',
+    url: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=1200&q=90',
   },
 ];
 

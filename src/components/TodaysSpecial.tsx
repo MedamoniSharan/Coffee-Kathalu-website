@@ -120,7 +120,7 @@ export default function TodaysSpecial() {
             <div className="lg:col-span-5 relative flex justify-center">
               <div className="relative w-full max-w-[340px] aspect-square rounded-3xl overflow-hidden shadow-2xl border-2 border-[#543323] group">
                 <Image
-                  src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80"
+                  src="/todays-special-luxury.jpg"
                   alt="Today's Special: Coffee Time at Coffee Kathalu"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
