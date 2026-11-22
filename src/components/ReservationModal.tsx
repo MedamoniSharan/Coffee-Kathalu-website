@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Sparkles, CheckCircle2 } from 'lucide-react';
+import { X, Sparkles, CheckCircle2, MessageSquare } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useCart } from '@/context/CartContext';
+import { CAFE_INFO } from '@/data/coffeeData';
 
 export default function ReservationModal() {
   const { isReservationOpen, setIsReservationOpen, showToast } = useCart();
@@ -14,6 +15,11 @@ export default function ReservationModal() {
   const [guests, setGuests] = useState('2 Guests');
   const [seating, setSeating] = useState('Window Barista Counter');
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const getWhatsAppReservationUrl = () => {
+    const text = `*Table Reservation - Coffee Kathalu Cafe*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Date:* ${encodeURIComponent(date || 'Today')}%0A*Time:* ${encodeURIComponent(time)}%0A*Guests:* ${encodeURIComponent(guests)}%0A*Seating:* ${encodeURIComponent(seating)}%0A%0APlease confirm my table reservation!`;
+    return `https://wa.me/91${CAFE_INFO.phone}?text=${text}`;
+  };
 
   if (!isReservationOpen) return null;
 
@@ -74,12 +80,25 @@ export default function ReservationModal() {
               <p><span className="font-bold">Time:</span> {time}</p>
               <p><span className="font-bold">Seating:</span> {seating}</p>
             </div>
-            <button
-              onClick={handleClose}
-              className="px-8 py-2.5 rounded-full bg-[#543323] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#3D2314] transition-all"
-            >
-              Done
-            </button>
+
+            <div className="max-w-xs mx-auto space-y-2.5">
+              <a
+                href={getWhatsAppReservationUrl()}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md active:scale-95"
+              >
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>Confirm on WhatsApp</span>
+              </a>
+
+              <button
+                onClick={handleClose}
+                className="w-full py-2.5 rounded-full bg-[#543323] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#3D2314] transition-all"
+              >
+                Done
+              </button>
+            </div>
           </div>
         ) : (
           <>

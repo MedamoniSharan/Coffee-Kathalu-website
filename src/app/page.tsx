@@ -15,6 +15,7 @@ import CartDrawer from '@/components/CartDrawer';
 import ReservationModal from '@/components/ReservationModal';
 import FranchiseModal from '@/components/FranchiseModal';
 import FloatingCartBar from '@/components/FloatingCartBar';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import ToastNotification from '@/components/ToastNotification';
 
 export default function Home() {
@@ -62,6 +63,9 @@ export default function Home() {
 
       {/* Floating Bottom Quick Tray Bar with instant WhatsApp ordering */}
       <FloatingCartBar />
+
+      {/* Floating WhatsApp Quick Chat & Order Button */}
+      <WhatsAppButton />
 
       {/* Modals & Feedback Notifications */}
       <FranchiseModal

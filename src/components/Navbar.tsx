@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingBag, Menu, X, Sparkles, Phone, Building2 } from 'lucide-react';
+import { ShoppingBag, Menu, X, Sparkles, Phone, Building2, MessageSquare } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { CAFE_INFO } from '@/data/coffeeData';
 
@@ -206,6 +206,15 @@ export default function Navbar({ onOpenFranchise }: NavbarProps) {
                 >
                   <Phone className="w-4 h-4 text-[#C27A45]" />
                   Call {CAFE_INFO.displayPhone}
+                </a>
+                <a
+                  href={`https://wa.me/91${CAFE_INFO.phone}?text=Hi%20Coffee%20Kathalu!%20I%20would%20like%20to%20order.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  Order on WhatsApp
                 </a>
                 <button
                   onClick={() => {

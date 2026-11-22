@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowRight, Coffee, Clock, Phone, Sparkles, Flame, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Coffee, Clock, Phone, Sparkles, Flame, CheckCircle2, MessageSquare } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { SPECIAL_OFFERS, CAFE_INFO } from '@/data/coffeeData';
 
@@ -92,6 +92,16 @@ export default function HeroSection() {
               >
                 <span>Explore Full Menu</span>
                 <ArrowRight className="w-4 h-4 text-[#E5A967]" />
+              </a>
+
+              <a
+                href={`https://wa.me/91${CAFE_INFO.phone}?text=Hi%20Coffee%20Kathalu!%20I%20would%20like%20to%20place%20an%20order.`}
+                target="_blank"
+                rel="noreferrer"
+                className="px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg active:scale-95"
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span>WhatsApp Order</span>
               </a>
 
               <a

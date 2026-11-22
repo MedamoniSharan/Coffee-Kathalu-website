@@ -2,9 +2,10 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, Tag, CheckCircle2 } from 'lucide-react';
+import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, Tag, CheckCircle2, MessageSquare } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useCart } from '@/context/CartContext';
+import { CAFE_INFO } from '@/data/coffeeData';
 
 export default function CartDrawer() {
   const {
@@ -25,6 +26,24 @@ export default function CartDrawer() {
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
   const [orderNumber, setOrderNumber] = useState('CM-28491');
+
+  // Format order message for WhatsApp
+  const getWhatsAppOrderUrl = (orderRef?: string) => {
+    const itemList = cart
+      .map((ci) => {
+        const unitPrice = ci.selectedOption?.price ?? ci.item.price;
+        const label = ci.selectedOption?.label || ci.size || 'Regular';
+        return `• ${ci.item.name} (${label}) x ${ci.quantity} = ₹${unitPrice * ci.quantity}`;
+      })
+      .join('%0A');
+
+    const promoInfo = promoCode ? `%0A*Coupon Applied:* ${promoCode} (-₹${discount.toFixed(0)})` : '';
+    const refInfo = orderRef ? `*Order Reference:* ${orderRef}%0A` : '';
+
+    const text = `*New Order - Coffee Kathalu Cafe*%0A${refInfo}%0A*Items:*%0A${itemList}%0A%0A*Subtotal:* ₹${subtotal.toFixed(0)}${promoInfo}%0A*GST (5%):* ₹${(total * 0.05).toFixed(0)}%0A*Grand Total:* ₹${(total * 1.05).toFixed(0)}%0A%0A*Store:* 19-6-288/1, Rangashaipet, Warangal%0APlease prepare my order!`;
+
+    return `https://wa.me/91${CAFE_INFO.phone}?text=${text}`;
+  };
 
   if (!isCartOpen) return null;
 
@@ -105,14 +124,27 @@ export default function CartDrawer() {
               <div className="bg-[#F5EBE1] p-4 rounded-2xl w-full max-w-xs border border-[#E8D6C4] mb-6 text-xs text-[#543323] text-left space-y-1">
                 <p><span className="font-bold">Order #:</span> {orderNumber}</p>
                 <p><span className="font-bold">Est. Time:</span> 12 - 15 mins</p>
-                <p><span className="font-bold">Total Paid:</span> ₹{total.toFixed(0)}</p>
+                <p><span className="font-bold">Total Paid:</span> ₹{(total * 1.05).toFixed(0)}</p>
               </div>
-              <button
-                onClick={handleFinish}
-                className="w-full max-w-xs py-3 rounded-full bg-[#543323] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#3D2314] transition-all"
-              >
-                Back to Cafe
-              </button>
+
+              <div className="w-full max-w-xs space-y-2.5">
+                <a
+                  href={getWhatsAppOrderUrl(orderNumber)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md active:scale-95"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Send Order to WhatsApp</span>
+                </a>
+
+                <button
+                  onClick={handleFinish}
+                  className="w-full py-3 rounded-full bg-[#543323] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#3D2314] transition-all"
+                >
+                  Back to Cafe
+                </button>
+              </div>
             </div>
           ) : cart.length === 0 ? (
             <div className="p-8 flex-1 flex flex-col items-center justify-center text-center">
@@ -258,21 +290,33 @@ export default function CartDrawer() {
                   </span>
                 </div>
 
-                {/* Checkout Button */}
-                <button
-                  onClick={handleCheckout}
-                  disabled={isCheckingOut}
-                  className="w-full py-3.5 rounded-full bg-[#543323] hover:bg-[#3D2314] text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-md active:scale-95 disabled:opacity-50"
-                >
-                  {isCheckingOut ? (
-                    <span>Processing Order...</span>
-                  ) : (
-                    <>
-                      <span>Proceed to Order</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
+                {/* WhatsApp & Standard Checkout Action Buttons */}
+                <div className="space-y-2 pt-1">
+                  <a
+                    href={getWhatsAppOrderUrl()}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-md active:scale-95"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    <span>Order via WhatsApp</span>
+                  </a>
+
+                  <button
+                    onClick={handleCheckout}
+                    disabled={isCheckingOut}
+                    className="w-full py-3 rounded-full bg-[#543323] hover:bg-[#3D2314] text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-sm active:scale-95 disabled:opacity-50"
+                  >
+                    {isCheckingOut ? (
+                      <span>Processing Order...</span>
+                    ) : (
+                      <>
+                        <span>Pay & Pickup at Cafe</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
+                  </button>
+                </div>
               </div>
             </>
           )}

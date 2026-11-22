@@ -172,23 +172,35 @@ export default function ContactSection() {
                   We have received your message. The Coffee Kathalu team will get in touch with you at{' '}
                   <span className="font-semibold text-[#2C1810]">{formData.contactInfo}</span> shortly.
                 </p>
-                <button
-                  onClick={() => {
-                    setSubmitted(false);
-                    setFormData({
-                      fullName: '',
-                      contactInfo: '',
-                      message: '',
-                      bookingType: 'general',
-                      guests: '2 Guests',
-                      date: '',
-                      time: 'Morning 09:00 AM',
-                    });
-                  }}
-                  className="px-6 py-2.5 rounded-full bg-[#543323] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#3D2314] transition-all"
-                >
-                  Send Another Inquiry
-                </button>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <a
+                    href={`https://wa.me/91${CAFE_INFO.phone}?text=Hi%20Coffee%20Kathalu,%20I%20am%20${encodeURIComponent(formData.fullName)}.%20Message:%20${encodeURIComponent(formData.message || 'I submitted an inquiry on your website.')}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md active:scale-95"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5" />
+                    <span>Chat on WhatsApp</span>
+                  </a>
+
+                  <button
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({
+                        fullName: '',
+                        contactInfo: '',
+                        message: '',
+                        bookingType: 'general',
+                        guests: '2 Guests',
+                        date: '',
+                        time: 'Morning 09:00 AM',
+                      });
+                    }}
+                    className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#543323] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#3D2314] transition-all"
+                  >
+                    Send Another Inquiry
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
